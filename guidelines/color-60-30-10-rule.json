@@ -1,4 +1,26 @@
 {
+  "id": "color-60-30-10-rule",
+  "title": "60-30-10 Color Composition Rule",
+  "version": "1.0.1",
+  "status": "adopted",
+  "audience": [
+    "designers",
+    "developers",
+    "design system contributors",
+    "Figma Make agent"
+  ],
+  "purpose": "A reusable colour-composition guideline for balancing calm foundations, supporting structure, and restrained emphasis in AI-assisted interface design.",
+  "recommended_locations": {
+    "github_repo": [
+      "guidelines/color-60-30-10-rule.json",
+      "guidelines/COLOR_60_30_10_RULE.md",
+      "guidelines/Guidelines.md"
+    ],
+    "figma_make_kit": [
+      "03-industry-references/COLOR_60_30_10_RULE.md",
+      "06-figma-make-data/color-60-30-10-rule.json"
+    ]
+  },
   "schema": {
     "name": "figma_make_ai_color_composition_guidelines",
     "version": "1.0.0",

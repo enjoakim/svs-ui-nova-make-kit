@@ -352,8 +352,14 @@ node_modules/@make-kits/svs-ui-nova/guidelines/color-60-30-10-rule.json
 
 You can reference this in your own AI-driven design tools, theme generators, or color validation systems.
 
+## Related Files
+
+- [color-60-30-10-rule.json](./color-60-30-10-rule.json)
+- [Guidelines.md](./Guidelines.md)
+
 ## Version History
 
+- **v1.0.1** - Repo-native metadata and placement guidance
 - **v1.0.0** - Initial comprehensive color composition guidelines based on the 60-30-10 rule
 - Includes 8-step AI color selection process
 - 17 required color roles with guidance

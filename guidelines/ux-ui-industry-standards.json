@@ -1,4 +1,26 @@
 {
+  "id": "ux-ui-industry-standards",
+  "title": "UX/UI Industry Standards Guidelines",
+  "version": "1.0.1",
+  "status": "adopted",
+  "audience": [
+    "designers",
+    "developers",
+    "design system contributors",
+    "Figma Make agent"
+  ],
+  "purpose": "A broad product-design quality baseline for AI-assisted screen generation and review across accessibility, hierarchy, navigation, content, states, trust, and scalability.",
+  "recommended_locations": {
+    "github_repo": [
+      "guidelines/ux-ui-industry-standards.json",
+      "guidelines/UX_UI_INDUSTRY_STANDARDS.md",
+      "guidelines/Guidelines.md"
+    ],
+    "figma_make_kit": [
+      "03-industry-references/UX_UI_INDUSTRY_STANDARDS.md",
+      "06-figma-make-data/ux-ui-industry-standards.json"
+    ]
+  },
   "schema": {
     "name": "figma_make_ai_ux_ui_industry_standards_guidelines",
     "version": "1.0.0",

@@ -1,4 +1,26 @@
 {
+  "id": "usability-heuristics",
+  "title": "Nielsen Norman Group's 10 Usability Heuristics",
+  "version": "2.0.1",
+  "status": "adopted",
+  "audience": [
+    "designers",
+    "developers",
+    "design system contributors",
+    "Figma Make agent"
+  ],
+  "purpose": "A reusable usability review lens for AI-assisted interface generation, critique, and design-system-aware calibration.",
+  "recommended_locations": {
+    "github_repo": [
+      "guidelines/usability-heuristics.json",
+      "guidelines/USABILITY_HEURISTICS.md",
+      "guidelines/Guidelines.md"
+    ],
+    "figma_make_kit": [
+      "03-industry-references/USABILITY_HEURISTICS.md",
+      "06-figma-make-data/usability-heuristics.json"
+    ]
+  },
   "schema": {
     "name": "figma_make_ai_usability_guidelines",
     "version": "2.0.0",

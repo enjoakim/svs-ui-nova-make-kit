@@ -116,8 +116,14 @@ node_modules/@make-kits/svs-ui-nova/guidelines/usability-heuristics.json
 
 You can reference this in your own AI-driven design tools or validation systems.
 
+## Related Files
+
+- [usability-heuristics.json](./usability-heuristics.json)
+- [Guidelines.md](./Guidelines.md)
+
 ## Version History
 
+- **v2.0.1** - Repo-native metadata and placement guidance
 - **v2.0.0** - Comprehensive calibrated guidelines with AI system instructions
 - Includes all 10 heuristics with detailed component implications
 - Ready-to-use Figma Make prompt snippets

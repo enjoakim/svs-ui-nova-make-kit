@@ -310,8 +310,14 @@ node_modules/@make-kits/svs-ui-nova/guidelines/ux-ui-industry-standards.json
 
 You can reference this in your own AI-driven design tools, validation systems, or design quality reviews.
 
+## Related Files
+
+- [ux-ui-industry-standards.json](./ux-ui-industry-standards.json)
+- [Guidelines.md](./Guidelines.md)
+
 ## Version History
 
+- **v1.0.1** - Repo-native metadata and placement guidance
 - **v1.0.0** - Initial comprehensive UX/UI industry standards based on NNG, WCAG 2.2, Material Design 3, Apple HIG, Fluent 2, Carbon, and USWDS
 - Includes 12 core principles with severity levels
 - AI review framework with scoring and review sequence
