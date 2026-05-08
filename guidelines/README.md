@@ -11,12 +11,15 @@ Core entry points:
 - [UX_UI_INDUSTRY_STANDARDS.md](./UX_UI_INDUSTRY_STANDARDS.md) - broader UX/UI
   quality standards and review framework
 - [COLOR_60_30_10_RULE.md](./COLOR_60_30_10_RULE.md) - color-composition guardrails
+- [Adaptive Typography & Responsive Expression](./foundation/AdaptiveTypographyResponsiveExpression.md) -
+  container-aware guidance for fluid type and selected visual scaling
 
 Machine-readable companions:
 
 - [usability-heuristics.json](./usability-heuristics.json)
 - [ux-ui-industry-standards.json](./ux-ui-industry-standards.json)
 - [color-60-30-10-rule.json](./color-60-30-10-rule.json)
+- [adaptive-typography-responsive-expression.json](./adaptive-typography-responsive-expression.json)
 
 This folder can also hold Make Kit guidance content such as:
 

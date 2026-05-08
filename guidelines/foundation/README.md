@@ -13,6 +13,7 @@ Foundation documentation covers fundamental concepts like accessibility, color s
 - [Accessibility](./Accessibility.md) - Accessibility guidelines and principles for inclusive design that works for all users
 - [Color System](./ColorSystem.md) - Comprehensive color system with semantic tokens, themes, and modes
 - [Typography](./Typography.md) - Typography system with typefaces, scales, and usage guidelines
+- [Adaptive Typography & Responsive Expression](./AdaptiveTypographyResponsiveExpression.md) - Container-aware guidance for fluid type and selected visual scaling
 - [Iconography](./Iconography.md) - Icon system with simple icons, pictograms, and illustrations
 
 ---

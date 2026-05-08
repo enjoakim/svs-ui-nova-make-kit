@@ -1,0 +1,214 @@
+{
+  "id": "adaptive-typography-responsive-expression",
+  "title": "Adaptive Typography & Responsive Expression",
+  "version": "1.0.1",
+  "status": "adopted",
+  "audience": [
+    "designers",
+    "developers",
+    "design system contributors",
+    "Figma Make agent"
+  ],
+  "purpose": "A shared foundation for how typography and selected visual design elements should scale with the space they live in, using container queries, container query units, clamp() and clear min/max boundaries.",
+  "source_references": [
+    {
+      "title": "MDN Web Docs - CSS container queries",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries",
+      "role": "Primary technical reference for container queries and container query units."
+    },
+    {
+      "title": "MDN Web Docs - clamp()",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/clamp",
+      "role": "Primary technical reference for setting minimum, preferred and maximum values."
+    }
+  ],
+  "recommended_locations": {
+    "github_repo": [
+      "guidelines/adaptive-typography-responsive-expression.json",
+      "guidelines/foundation/AdaptiveTypographyResponsiveExpression.md",
+      "guidelines/foundation/Typography.md"
+    ],
+    "figma_make_kit": [
+      "03-industry-references/adaptive-typography-responsive-expression.md",
+      "06-figma-make-data/adaptive-typography-responsive-expression.json"
+    ]
+  },
+  "core_message": "Typography and selected visual elements should respond to the space they live in, not only to fixed viewport breakpoints.",
+  "svenska_spel_message": "Our typography should stay clear, balanced and expressive across surfaces. Large messages can scale with energy, while critical information must remain calm, readable and stable.",
+  "principle_tagline": "Scale with context. Stay clear in every size.",
+  "focus_areas": [
+    {
+      "name": "clamp()",
+      "description": "Use clamp() to define a safe minimum, a flexible preferred value and a maximum size. This creates controlled fluid scaling instead of hard jumps between breakpoints.",
+      "why_it_matters": "It lets expressive typography grow with the layout while preventing text from becoming too small, too large or visually unstable."
+    },
+    {
+      "name": "container queries",
+      "description": "Use container queries when components should respond to the space of their own container rather than the entire viewport.",
+      "why_it_matters": "A card, hero area or module can be narrow or wide regardless of screen size. Container queries make reusable components more context-aware."
+    },
+    {
+      "name": "container query units",
+      "description": "Use units such as cqi, cqb, cqmin and cqmax when typography or design elements should scale in relation to the container.",
+      "why_it_matters": "This makes scaling more precise and modular than viewport units when the available space depends on component layout."
+    },
+    {
+      "name": "min/max boundaries",
+      "description": "Always define clear lower and upper limits for adaptive sizes.",
+      "why_it_matters": "Boundaries protect readability, hierarchy and layout stability."
+    },
+    {
+      "name": "typographic balance",
+      "description": "Scale typography to support hierarchy and rhythm, not only visual impact.",
+      "why_it_matters": "Large type can create expression, but it must still help the user understand the page."
+    },
+    {
+      "name": "readability",
+      "description": "Critical UI text should remain calm, stable and readable across sizes.",
+      "why_it_matters": "Information about money, limits, errors, verification and responsible gaming must never become cramped, oversized or hard to scan."
+    },
+    {
+      "name": "controlled scaling of text and visual objects",
+      "description": "Apply the same adaptive logic to selected visual elements such as hero objects, illustrations or 3D cubes when they need to scale with available space.",
+      "why_it_matters": "Brand expression can adapt to context without competing with content or interaction."
+    }
+  ],
+  "connected_design_principles": [
+    {
+      "principle": "Clarity over cleverness",
+      "swedish_working_intent": "Tydligt före smart",
+      "connection": "Adaptive type should improve understanding, not become a visual trick."
+    },
+    {
+      "principle": "Accessible from the start",
+      "swedish_working_intent": "Tillgängligt från början",
+      "connection": "Text must remain readable and usable across layout sizes and contexts."
+    },
+    {
+      "principle": "Engaging, but balanced",
+      "swedish_working_intent": "Levande men balanserat",
+      "connection": "Large expressive typography and visual elements can scale with energy while staying controlled."
+    },
+    {
+      "principle": "Confidence at every step",
+      "swedish_working_intent": "Tryggt i varje steg",
+      "connection": "Critical information about money, limits, errors and responsible gaming should remain stable and legible."
+    }
+  ],
+  "industry_connections": [
+    "Responsive design",
+    "Intrinsic web design",
+    "Fluid typography",
+    "Container queries",
+    "Progressive enhancement",
+    "Accessibility",
+    "Visual hierarchy",
+    "Robust UI"
+  ],
+  "usage_guidance": {
+    "use_when": [
+      "Hero typography should scale with its available space.",
+      "A component is reused in different widths or layout contexts.",
+      "A card heading needs to adapt to the card width.",
+      "An editorial or brand expression needs to stay balanced across surfaces.",
+      "A visual object such as a 3D cube, illustration or hero element should scale with its container.",
+      "Viewport breakpoints do not accurately describe the real space available.",
+      "A module needs to stay readable in both compact and spacious layouts."
+    ],
+    "be_careful_when": [
+      "The scaling could make text harder to read.",
+      "Expressive typography risks overpowering critical information.",
+      "Similar components may end up with inconsistent type scales.",
+      "Translated strings or real content create unexpected wrapping.",
+      "The design relies on fluid scaling without clear minimum and maximum boundaries."
+    ],
+    "default_approach": [
+      "Start with the content hierarchy and readability need.",
+      "Use container queries for components and modules.",
+      "Use clamp() to set safe minimum, preferred and maximum values.",
+      "Use cqi or cqmin when the size should relate to the container.",
+      "Keep critical UI text more stable than expressive display text.",
+      "Test with real content, translated strings and edge cases.",
+      "Document where adaptive scaling is allowed and why."
+    ]
+  },
+  "content_rules": {
+    "do": [
+      "Scale with context.",
+      "Protect readability with minimum and maximum values.",
+      "Use adaptive sizing to support hierarchy.",
+      "Let expressive typography feel alive without becoming unstable.",
+      "Keep critical messages calm, clear and readable.",
+      "Apply the same controlled scaling logic to selected visual objects when useful."
+    ],
+    "dont": [
+      "Do not use adaptive scaling as a visual gimmick.",
+      "Do not let type become too small, too large or cramped.",
+      "Do not scale reusable UI typography directly from viewport width when container-aware scaling is the better fit.",
+      "Do not rely only on viewport breakpoints for reusable components.",
+      "Do not allow expressive elements to compete with critical content.",
+      "Do not create unpredictable type scales across similar modules.",
+      "Do not turn this into full typography token documentation."
+    ]
+  },
+  "implementation_examples": {
+    "container_setup": {
+      "description": "Define a component as a query container.",
+      "css": ".principle-card {\n  container-type: inline-size;\n}"
+    },
+    "adaptive_card_heading": {
+      "description": "Scale a card heading based on the card's inline size.",
+      "css": ".principle-card__title {\n  font-size: clamp(1.5rem, 8cqi, 4rem);\n  line-height: 0.95;\n}"
+    },
+    "named_container_hero": {
+      "description": "Create a named hero container and scale the hero word within it.",
+      "css": ".hero {\n  container: hero / inline-size;\n}\n\n@container hero (width > 640px) {\n  .hero__word {\n    font-size: clamp(5rem, 18cqi, 16rem);\n  }\n}"
+    },
+    "adaptive_visual_object": {
+      "description": "Scale a visual object, such as a 3D cube or brand element, with its available space.",
+      "css": ".brand-object {\n  width: clamp(4rem, 24cqi, 18rem);\n  height: auto;\n}"
+    },
+    "critical_text_stability": {
+      "description": "Keep critical messages readable and more stable.",
+      "css": ".critical-message {\n  font-size: clamp(1rem, 2cqi, 1.25rem);\n  line-height: 1.4;\n}"
+    }
+  },
+  "suggested_section_copy": {
+    "title": "Adaptive typography & responsive expression",
+    "intro": "Typography should respond to the space it lives in. With clamp(), container queries and container query units, we can scale type and selected visual elements in a controlled way — with clear minimum and maximum boundaries.",
+    "body": "This helps us keep hierarchy expressive, layouts balanced and critical information readable across products, modules and devices.",
+    "short_note": "Use adaptive sizing to create clarity, not decoration."
+  },
+  "figma_make_instruction": {
+    "placement": [
+      "Industry Foundations",
+      "Accessibility",
+      "Responsive design",
+      "Typography resilience",
+      "Robust UI"
+    ],
+    "instruction": "Add this as a concise technical foundation, not a full typography token or component documentation page. Show it as a practical example of how design principles translate into implementation thinking.",
+    "must_include": [
+      "clamp()",
+      "container queries",
+      "container query units such as cqi, cqmin and cqmax",
+      "clear min/max boundaries",
+      "typographic balance",
+      "readability",
+      "controlled scaling of both text and visual objects"
+    ],
+    "must_connect_to": [
+      "Clarity over cleverness",
+      "Accessible from the start",
+      "Engaging, but balanced",
+      "Confidence at every step"
+    ],
+    "avoid": [
+      "Do not mention font-size-adjust as the main solution.",
+      "Do not make it a large technical documentation page.",
+      "Do not present adaptive scaling as purely decorative.",
+      "Do not remove the Svenska Spel context around clarity, trust and responsibility."
+    ]
+  },
+  "short_prompt_for_figma_make": "Add the attached Adaptive Typography & Responsive Expression JSON to the Figma Make kit. This replaces the previous font-size-adjust direction. Focus on clamp(), container queries, container query units, min/max boundaries, typographic balance, readability and controlled scaling of both text and visual objects. Keep it concise and connect it to accessibility, clarity, balanced expression and trust."
+}

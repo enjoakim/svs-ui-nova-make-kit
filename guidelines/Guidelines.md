@@ -32,6 +32,7 @@ Core design system principles and foundational systems:
 - [Accessibility](./foundation/Accessibility.md) - Accessibility guidelines and principles for inclusive design
 - [Color System](./foundation/ColorSystem.md) - Comprehensive color system with semantic tokens and modes
 - [Typography](./foundation/Typography.md) - Typography system with typefaces, scales, and usage guidelines
+- [Adaptive Typography & Responsive Expression](./foundation/AdaptiveTypographyResponsiveExpression.md) - Container-aware scaling for type and selected visual elements
 - [Iconography](./foundation/Iconography.md) - Icon system with simple icons, pictograms, and illustrations
 
 ### Review Frameworks
@@ -47,6 +48,9 @@ AI-assisted design work:
 - [60-30-10 Color Composition Rule](./COLOR_60_30_10_RULE.md)
   - color-balance guidance for hierarchy and brand expression
   - machine-readable source: [color-60-30-10-rule.json](./color-60-30-10-rule.json)
+- [Adaptive Typography & Responsive Expression](./foundation/AdaptiveTypographyResponsiveExpression.md)
+  - typography resilience and contextual scaling guidance
+  - machine-readable source: [adaptive-typography-responsive-expression.json](./adaptive-typography-responsive-expression.json)
 
 ### Patterns
 User experience patterns and common interaction flows:

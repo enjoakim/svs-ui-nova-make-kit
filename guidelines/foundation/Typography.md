@@ -15,6 +15,9 @@ Typography is a fundamental element of the design system that establishes visual
 - Accessible contrast and sizing
 - Scalable and maintainable type scales
 
+For container-aware fluid behavior and controlled scaling of expressive type and
+selected visual objects, see [Adaptive Typography & Responsive Expression](./AdaptiveTypographyResponsiveExpression.md).
+
 ---
 
 ## Typefaces
