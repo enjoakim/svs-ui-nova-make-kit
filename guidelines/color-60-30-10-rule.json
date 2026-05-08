@@ -1,0 +1,393 @@
+{
+  "schema": {
+    "name": "figma_make_ai_color_composition_guidelines",
+    "version": "1.0.0",
+    "format": "json",
+    "intended_use": [
+      "Figma Make Kit AI colour guidance",
+      "AI-generated UI theme calibration",
+      "Design-system-aware colour distribution",
+      "Visual hierarchy and brand expression checks",
+      "Screen and component colour review"
+    ],
+    "calibration_level": "high",
+    "source_principle": "The 60-30-10 colour rule is a composition guideline where roughly 60% of the interface uses a dominant/base colour, 30% uses a secondary/supporting colour, and 10% uses an accent colour."
+  },
+  "ai_system_instruction": {
+    "role": "You are a senior visual and product designer applying the 60-30-10 colour rule to AI-generated UI.",
+    "primary_objective": "Create visually balanced, accessible, brand-aligned interfaces where colour supports hierarchy, usability, meaning, and emotional tone.",
+    "behavioural_rules": [
+      "Use colour to support usability first, aesthetics second.",
+      "Apply the 60-30-10 rule as a flexible composition guide, not a strict mathematical constraint.",
+      "Ensure the dominant 60% colour creates a calm and stable base.",
+      "Use the secondary 30% colour to structure surfaces, sections, cards, panels, and supporting UI areas.",
+      "Reserve the accent 10% colour for emphasis, primary actions, key states, highlights, and moments of brand expression.",
+      "Do not overuse accent colours; overuse weakens hierarchy and creates visual noise.",
+      "Always check colour contrast, legibility, state clarity, and accessibility.",
+      "Do not rely on colour alone to communicate status, errors, success, warnings, or interactivity.",
+      "Respect existing brand tokens and design-system colour roles before inventing new colours.",
+      "When a brand colour is visually intense, use it with restraint and support it with neutral or calmer colours."
+    ],
+    "do_not": [
+      "Do not apply accent colours to too many elements.",
+      "Do not use the 60-30-10 rule to justify poor contrast.",
+      "Do not make the interface colourful at the cost of clarity.",
+      "Do not assign colours randomly without semantic or hierarchical purpose.",
+      "Do not use colour only for decoration when it competes with task-critical content.",
+      "Do not use the same colour for conflicting meanings.",
+      "Do not use error, warning, success, or info colours as general decorative accents.",
+      "Do not ignore dark mode or theme variants if the design requires them."
+    ]
+  },
+  "core_rule": {
+    "name": "60-30-10 Colour Distribution",
+    "description": "Use three main colour roles to create balance: a dominant base colour, a secondary supporting colour, and a restrained accent colour.",
+    "flexibility_note": "The 60-30-10 split should guide visual balance, not require exact pixel-level measurement. A good result may be 70-20-10, 65-25-10, or 60-25-15 depending on product, brand, density, and context.",
+    "distribution": {
+      "dominant_60": {
+        "percentage": "approximately 60%",
+        "role": "Primary visual foundation",
+        "purpose": [
+          "Creates overall calmness and cohesion",
+          "Defines the main background or base surface",
+          "Supports readability and long-term comfort",
+          "Allows content and actions to stand out"
+        ],
+        "typical_usage": [
+          "Page background",
+          "Primary surfaces",
+          "Large layout areas",
+          "Neutral containers",
+          "Base cards or panels",
+          "Main empty space"
+        ],
+        "recommended_colour_types": [
+          "Neutral",
+          "Near-white",
+          "Soft off-white",
+          "Muted brand tint",
+          "Dark neutral for dark mode",
+          "Low-saturation foundation colour"
+        ],
+        "ai_generation_rules": [
+          "Choose the dominant colour first.",
+          "Keep it visually quiet enough to support content.",
+          "Avoid high-saturation dominant colours unless the product intentionally needs a strong immersive brand expression.",
+          "Use the dominant colour to create consistency across the full screen.",
+          "Ensure text placed on this colour has sufficient contrast."
+        ],
+        "avoid": [
+          "Bright saturated background across most of the UI",
+          "Dominant colour that reduces readability",
+          "Base surface competing with content",
+          "Dominant colour changing unpredictably between screens"
+        ]
+      },
+      "secondary_30": {
+        "percentage": "approximately 30%",
+        "role": "Supporting structure and contrast",
+        "purpose": [
+          "Creates visual organisation",
+          "Separates sections and content groups",
+          "Adds depth without overpowering the interface",
+          "Supports hierarchy between surfaces"
+        ],
+        "typical_usage": [
+          "Secondary surfaces",
+          "Cards",
+          "Panels",
+          "Sidebars",
+          "Navigation areas",
+          "Section backgrounds",
+          "Subtle borders or fills",
+          "Supporting illustrations or graphical blocks"
+        ],
+        "recommended_colour_types": [
+          "Slightly darker or lighter neutral",
+          "Muted complementary colour",
+          "Soft brand-support colour",
+          "Surface elevation tint",
+          "Low-contrast structural colour"
+        ],
+        "ai_generation_rules": [
+          "Use the secondary colour to organise layout and separate content zones.",
+          "Keep it related to the dominant colour so the interface feels cohesive.",
+          "Use it more visibly than the accent colour but less expansively than the dominant colour.",
+          "Ensure it does not compete with primary actions.",
+          "Use it to support scanning and grouping."
+        ],
+        "avoid": [
+          "Secondary colour with the same intensity as the accent",
+          "Too many competing secondary colours",
+          "Section colours that make the layout feel fragmented",
+          "Low contrast between secondary surfaces and content"
+        ]
+      },
+      "accent_10": {
+        "percentage": "approximately 10%",
+        "role": "Focus, emphasis, brand energy, and action",
+        "purpose": [
+          "Draws attention to important actions or information",
+          "Creates brand recognition",
+          "Highlights selected or active states",
+          "Supports conversion, decision-making, or task progression"
+        ],
+        "typical_usage": [
+          "Primary buttons",
+          "Important links",
+          "Active navigation states",
+          "Selection indicators",
+          "Key highlights",
+          "Progress indicators",
+          "Small brand moments",
+          "Important data points"
+        ],
+        "recommended_colour_types": [
+          "Primary brand colour",
+          "High-contrast action colour",
+          "Expressive accent colour",
+          "Accessible highlight colour",
+          "Distinct but controlled emphasis colour"
+        ],
+        "ai_generation_rules": [
+          "Reserve accent colour for the most important elements.",
+          "Use accent colour sparingly to preserve visual hierarchy.",
+          "Prefer one main accent colour per screen.",
+          "Do not use accent colour on low-priority decoration.",
+          "Make sure accent elements remain readable and accessible.",
+          "When using multiple accents, assign clear semantic roles."
+        ],
+        "avoid": [
+          "Accent colour applied to every button, icon, link, badge, and decoration",
+          "Accent colour used for both positive and negative meanings",
+          "Accent colour on large areas unless intentionally part of a campaign or hero moment",
+          "Accent colour that fails contrast requirements",
+          "Multiple accents with no clear hierarchy"
+        ]
+      }
+    }
+  },
+  "colour_roles": {
+    "required_roles": [
+      "background",
+      "surface",
+      "surface_alt",
+      "text_primary",
+      "text_secondary",
+      "border",
+      "primary_action",
+      "primary_action_hover",
+      "primary_action_pressed",
+      "focus_ring",
+      "link",
+      "selected",
+      "disabled",
+      "error",
+      "warning",
+      "success",
+      "info"
+    ],
+    "role_guidance": {
+      "background": "Usually part of the dominant 60%. Should support readability and visual calm.",
+      "surface": "Usually part of the dominant or secondary colour group. Used for cards, containers, and UI areas.",
+      "surface_alt": "Usually part of the secondary 30%. Used to create grouping and section separation.",
+      "text_primary": "Must prioritise contrast over colour expression.",
+      "text_secondary": "Should be clearly readable but visually less dominant than primary text.",
+      "border": "Should separate structure without creating unnecessary noise.",
+      "primary_action": "Usually belongs to the accent 10%. Should be visually distinct and accessible.",
+      "focus_ring": "Must be visible and accessible. Can use accent colour if contrast is strong.",
+      "link": "Can use accent or semantic link colour. Must remain distinguishable from body text.",
+      "selected": "Can use accent colour, accent tint, or clear selected state pattern.",
+      "disabled": "Should be visibly inactive without becoming unreadable.",
+      "error": "Semantic colour reserved for destructive, invalid, or failed states.",
+      "warning": "Semantic colour reserved for caution, risk, or attention before harm.",
+      "success": "Semantic colour reserved for completion, confirmation, or positive outcome.",
+      "info": "Semantic colour reserved for neutral system guidance or contextual information."
+    }
+  },
+  "ai_colour_selection_process": [
+    {
+      "step": 1,
+      "name": "Define product mood and brand intent",
+      "instruction": "Identify whether the interface should feel calm, playful, premium, energetic, trustworthy, editorial, operational, or campaign-driven."
+    },
+    {
+      "step": 2,
+      "name": "Select dominant 60% colour",
+      "instruction": "Choose a stable base colour that supports readability, consistency, and long-term use."
+    },
+    {
+      "step": 3,
+      "name": "Select secondary 30% colour",
+      "instruction": "Choose a supporting colour that structures content and creates surface hierarchy without fighting the base."
+    },
+    {
+      "step": 4,
+      "name": "Select accent 10% colour",
+      "instruction": "Choose one expressive colour for primary actions, emphasis, selected states, and key highlights."
+    },
+    {
+      "step": 5,
+      "name": "Assign semantic colours",
+      "instruction": "Define error, warning, success, and info colours separately from the decorative accent unless the brand system explicitly supports overlap."
+    },
+    {
+      "step": 6,
+      "name": "Check accessibility",
+      "instruction": "Verify contrast for text, icons, controls, focus states, and semantic messages. Do not rely on colour alone."
+    },
+    {
+      "step": 7,
+      "name": "Test screen balance",
+      "instruction": "Review the full screen visually. If accent colours dominate, reduce them. If the design feels flat, increase secondary structure or subtle elevation."
+    },
+    {
+      "step": 8,
+      "name": "Review across states and themes",
+      "instruction": "Check default, hover, pressed, focused, selected, disabled, loading, success, warning, error, and empty states. Include light and dark mode if relevant."
+    }
+  ],
+  "figma_make_generation_rules": {
+    "screen_level": [
+      "Use the dominant colour for the main background and large quiet surfaces.",
+      "Use the secondary colour for cards, navigation, panels, and grouped sections.",
+      "Use the accent colour only for the highest-priority interactions and highlights.",
+      "Create a clear primary action using the accent colour.",
+      "Ensure secondary actions are visually calmer than primary actions.",
+      "Avoid making every interactive element the accent colour.",
+      "Use neutral spacing, typography, and hierarchy to support the colour system.",
+      "Check that semantic colours do not clash with the main palette."
+    ],
+    "component_level": [
+      "Define colour states for default, hover, pressed, focused, selected, disabled, loading, error, success, and warning where relevant.",
+      "Use the same colour role consistently across equivalent components.",
+      "Make selected and active states visible through more than colour when needed.",
+      "Use borders, icons, labels, patterns, or text to reinforce semantic meaning.",
+      "Ensure components remain usable on dominant and secondary surfaces."
+    ],
+    "theme_level": [
+      "Map colours to semantic tokens rather than raw colour names.",
+      "Create light and dark variants if the product supports themes.",
+      "Keep accent usage restrained across both light and dark mode.",
+      "Do not invert colours mechanically; adjust contrast, elevation, and saturation for each theme.",
+      "Preserve brand recognition while protecting readability."
+    ]
+  },
+  "accessibility_requirements": {
+    "contrast": [
+      "Text and icons must have sufficient contrast against their background.",
+      "Primary actions must be readable in all states.",
+      "Disabled states must look inactive while still being understandable.",
+      "Focus indicators must be clearly visible against adjacent colours.",
+      "Do not place small text on saturated or complex backgrounds without a readable surface treatment."
+    ],
+    "non_colour_cues": [
+      "Use text, icons, labels, borders, or patterns in addition to colour for errors, warnings, success messages, and selected states.",
+      "Never communicate critical meaning using colour alone.",
+      "Ensure users with colour-vision differences can understand state and hierarchy."
+    ],
+    "state_visibility": [
+      "Hover, pressed, focused, selected, and disabled states should be visually distinct.",
+      "Error and warning states should be noticeable but not unnecessarily alarming.",
+      "Success states should confirm completion without overpowering the next task."
+    ]
+  },
+  "design_quality_checks": {
+    "balance_questions": [
+      "Does the screen have a calm dominant foundation?",
+      "Does the secondary colour help structure the layout?",
+      "Is the accent colour reserved for what truly matters?",
+      "Can the user identify the primary action within two seconds?",
+      "Does the design feel balanced rather than noisy or flat?"
+    ],
+    "usability_questions": [
+      "Is text readable on every surface?",
+      "Are interactive states clear?",
+      "Are semantic colours used only for their intended meaning?",
+      "Does colour support hierarchy rather than replace it?",
+      "Can users understand status and meaning without relying only on colour?"
+    ],
+    "brand_questions": [
+      "Does the palette express the brand without overwhelming the UI?",
+      "Is the brand colour used with enough restraint to remain meaningful?",
+      "Do neutral and secondary colours support the brand colour?",
+      "Would the palette scale across many product screens?"
+    ],
+    "failure_patterns": [
+      "Accent colour overuse",
+      "Too many saturated colours",
+      "Weak contrast",
+      "Decorative colour competing with task-critical UI",
+      "Semantic colours used as decoration",
+      "Primary and secondary actions looking equally important",
+      "Colour roles changing between screens",
+      "Dark mode created through simple inversion only",
+      "Colour used as the only state indicator"
+    ]
+  },
+  "distribution_examples": {
+    "calm_product_ui": {
+      "dominant_60": "warm off-white or soft neutral background",
+      "secondary_30": "subtle grey, beige, or muted surface colour for cards and sections",
+      "accent_10": "clear brand colour for primary actions, selected states, and key highlights"
+    },
+    "bold_brand_ui": {
+      "dominant_60": "neutral or deep base that lets brand colour stand out",
+      "secondary_30": "brand-tinted surface or complementary muted colour",
+      "accent_10": "strong brand colour used carefully for action and emphasis"
+    },
+    "dark_mode_ui": {
+      "dominant_60": "dark neutral background",
+      "secondary_30": "elevated dark surface or muted tinted panels",
+      "accent_10": "accessible bright accent used for primary actions and active states"
+    },
+    "data_heavy_ui": {
+      "dominant_60": "neutral background that supports long reading",
+      "secondary_30": "surface and table structure colours",
+      "accent_10": "highlight colour for selected data, key actions, and important alerts"
+    }
+  },
+  "figma_make_snippets": {
+    "screen_generation": "Apply the 60-30-10 colour rule. Use a calm dominant base for roughly 60% of the UI, a secondary supporting colour for around 30% of surfaces and structure, and a restrained accent colour for around 10% of primary actions, highlights, and selected states. Ensure accessibility, clear hierarchy, and semantic colour consistency.",
+    "theme_generation": "Create a colour theme using semantic tokens. Define dominant, secondary, accent, text, surface, border, focus, disabled, error, warning, success, and info roles. Apply the 60-30-10 rule flexibly and ensure all text, controls, states, and focus indicators are accessible.",
+    "component_generation": "Generate component colour states using the palette roles. Primary actions may use the accent colour; secondary actions should be calmer. Include default, hover, pressed, focused, selected, disabled, loading, error, warning, and success states where relevant. Do not rely on colour alone.",
+    "colour_review": "Review this design against the 60-30-10 colour rule. Identify whether dominant, secondary, and accent colours are balanced. Check contrast, hierarchy, semantic colour use, accessibility, state visibility, brand expression, and accent overuse. Recommend precise changes."
+  },
+  "machine_readable_summary": {
+    "must_have": [
+      "dominant_base_colour",
+      "secondary_support_colour",
+      "restrained_accent_colour",
+      "semantic_colour_roles",
+      "accessible_contrast",
+      "clear_primary_action",
+      "visible_interaction_states",
+      "non_colour_state_cues",
+      "consistent_colour_tokens",
+      "brand_aligned_palette"
+    ],
+    "avoid": [
+      "accent_overuse",
+      "poor_contrast",
+      "random_colour_assignment",
+      "semantic_colour_as_decoration",
+      "colour_only_status",
+      "too_many_saturated_colours",
+      "inconsistent_colour_roles",
+      "primary_secondary_confusion",
+      "mechanical_dark_mode_inversion",
+      "visual_noise"
+    ],
+    "quality_threshold": {
+      "minimum_average_score": 4,
+      "critical_checks": [
+        "contrast",
+        "primary_action_visibility",
+        "semantic_colour_consistency",
+        "accent_restraint",
+        "state_visibility"
+      ],
+      "rule": "If contrast, state visibility, or semantic colour meaning fails, revise the palette before design handoff."
+    }
+  }
+}

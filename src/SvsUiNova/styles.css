@@ -1,0 +1,979 @@
+:root {
+  --border-radius\/rounded-none: 0;
+  --border-radius\/rounded-sm: 2;
+  --border-radius\/rounded: 4;
+  --border-radius\/rounded-md: 6;
+  --border-radius\/rounded-lg: 8;
+  --border-radius\/rounded-xl: 12;
+  --border-radius\/rounded-2xl: 16;
+  --border-radius\/rounded-3xl: 24;
+  --border-radius\/rounded-full: 9999;
+  --gap\/gap-0: 0;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-px: 1;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-0\,5: 2;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-1: 4;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-1\,5: 6;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-2: 8;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-3: 12;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-4: 16;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-5: 20;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-6: 24;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-7: 28;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-8: 32;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-9: 36;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-10: 40;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-11: 44;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-12: 48;  /* Controlling gutters between grid and flexbox items */
+  --color\/accent\/primary\/bg\/rest: #ED0000;  /* Default primary background color used in the normal, inactive state of components. */
+  --color\/accent\/primary-variant\/bg\/rest: #FFD5CE;  /* Default variant of the primary color used to add visual distinction or hierarchy. */
+  --color\/accent\/primary-variant\/bg\/hover: #FFBDB2;  /* Primary variant color displayed when an interactive element is hovered. */
+  --color\/accent\/primary-variant\/bg\/pressed: #FF9485;  /* Primary variant color shown while an element is being actively pressed or clicked. */
+  --color\/accent\/primary-variant\/bg\/selected: #FFAB9E;  /* Primary variant color used to indicate a selected or active state. */
+  --color\/accent\/primary-variant\/fg\/default: #86102C;  /* Main foreground color used for text or icons on primary variant backgrounds. */
+  --color\/accent\/primary-variant\/fg\/muted: #ED0000;  /* A lower-emphasis version of the primary variant foreground, used for secondary text or less prominent content on primary variant backgrounds. */
+  --color\/accent\/primary\/fg\/default: #FFF;  /* Main foreground color used for text or icons on primary backgrounds. */
+  --color\/accent\/primary\/fg\/muted: #FFD5CE;  /* A lower-emphasis version of the primary foreground color, used for secondary text or less prominent content on primary backgrounds. */
+  --color\/accent\/primary\/bg\/hover: #D10011;  /* Primary background color shown when a user hovers over an interactive component. */
+  --color\/accent\/primary\/bg\/pressed: #A20020;  /* Primary background color displayed while a component is being actively pressed or clicked. */
+  --color\/accent\/primary\/bg\/selected: #B8001F;  /* Primary background color used to indicate a selected or active state. */
+  --color\/status\/success\/bg\/rest: #017E0F;
+  --color\/status\/success-variant\/bg\/rest: #EBFFE2;
+  --color\/status\/success-variant\/bg\/hover: #CAFFBB;
+  --color\/status\/success-variant\/bg\/pressed: #88FC79;
+  --color\/status\/success-variant\/fg\/default: #002201;
+  --color\/status\/success-variant\/fg\/muted: #280301CC;
+  --color\/status\/success\/bg\/hover: #006E0C;
+  --color\/status\/success\/bg\/pressed: #005306;
+  --color\/status\/success\/bg\/selected: #016109;
+  --color\/status\/success\/fg\/default: #FFF;
+  --color\/status\/success\/fg\/muted: #FFFC;
+  --color\/status\/attention\/bg\/rest: #E6B037;
+  --color\/status\/attention\/bg\/hover: #D3A337;
+  --color\/status\/attention\/bg\/pressed: #B38A2D;
+  --color\/status\/attention\/bg\/selected: #C6982F;
+  --color\/status\/attention\/fg\/default: #3E2E09;
+  --color\/status\/attention\/fg\/muted: #594311;
+  --color\/status\/attention-variant\/bg\/rest: #FCEFD9;
+  --color\/status\/attention-variant\/bg\/hover: #FADFAB;
+  --color\/status\/attention-variant\/bg\/pressed: #F5BE41;
+  --color\/status\/attention-variant\/fg\/default: #241A03;
+  --color\/status\/attention-variant\/fg\/muted: #3E2E09;
+  --color\/status\/important\/bg\/rest: #C5281B;
+  --color\/status\/important\/bg\/hover: #B02418;
+  --color\/status\/important\/bg\/pressed: #861910;
+  --color\/status\/important\/bg\/selected: #9B1F14;
+  --color\/status\/important\/fg\/default: #FFF;
+  --color\/status\/important\/fg\/muted: #F9DBD5;
+  --color\/status\/important-variant\/bg\/rest: #FCEEEB;
+  --color\/status\/important-variant\/fg\/default: #3B0603;
+  --color\/status\/important-variant\/fg\/muted: #280301CC;
+  --color\/layer\/neutral\/bg\/rest: #28010E0F;
+  --color\/layer\/neutral\/bg\/hover: #2803011A;
+  --color\/layer\/neutral\/bg\/pressed: #28030129;
+  --color\/layer\/neutral\/bg\/selected: #28030124;
+  --color\/layer\/contrast\/on-base\/bg\/rest: #FFF;
+  --color\/layer\/contrast\/on-base\/bg\/hover: #F5F2EF;
+  --color\/layer\/contrast\/on-base\/bg\/pressed: #E5DFDA;
+  --color\/layer\/contrast\/on-base\/bg\/selected: #EFEAE7;
+  --color\/layer\/contrast\/on-surface\/bg\/rest: #FAF6F3;
+  --color\/layer\/contrast\/on-surface\/bg\/hover: #F1EDEA;
+  --color\/layer\/contrast\/on-surface\/bg\/pressed: #E1DAD5;
+  --color\/layer\/contrast\/on-surface\/bg\/selected: #EAE5E1;
+  --color\/layer\/transparent\/bg\/rest: #28030100;
+  --color\/layer\/transparent\/bg\/hover: #28010E0F;
+  --color\/layer\/transparent\/bg\/pressed: #28030129;
+  --color\/layer\/transparent\/bg\/selected: #2803011F;
+  --color\/layer\/fg\/default: #1B1918;
+  --color\/layer\/fg\/muted: #000000B2;
+  --color\/layer-inverted\/bg\/rest: #280301CC;
+  --color\/layer-inverted\/fg\/default: #FFF;
+  --color\/layer-inverted\/fg\/muted: #FFFC;
+  --color\/surface\/base\/bg\/rest: #FAF6F3;
+  --color\/surface\/standard\/bg\/rest: #FFF;
+  --color\/surface\/standard\/bg\/hover: #F5F2EF;
+  --color\/surface\/standard\/bg\/pressed: #E5DFDA;
+  --color\/surface\/standard\/bg\/selected: #EFEAE7;
+  --color\/surface\/elevated\/bg\/rest: #FFF;
+  --color\/surface\/elevated\/bg\/hover: #F5F2EF;
+  --color\/surface\/elevated\/bg\/pressed: #E5DFDA;
+  --color\/surface\/elevated\/bg\/selected: #EFEAE7;
+  --color\/surface\/fg\/default: #1B1918;  /* Used for foreground elements such as text, icons. A shared fg for base, standard, and elevated surfaces. */
+  --color\/surface\/fg\/muted: #000000B2;
+  --color\/surface-inverted\/bg\/rest: #161413;
+  --color\/surface-inverted\/fg\/default: #EAE5E1;
+  --color\/surface-inverted\/fg\/primary: #FFAB9E;
+  --color\/surface-inverted\/fg\/muted: #FFFC;
+  --color\/stroke\/low\/rest: #28030114;
+  --color\/stroke\/medium\/rest: #28030129;
+  --color\/stroke\/high\/rest: #28030152;
+  --color\/stroke\/high\/hover: #28030166;
+  --color\/stroke\/high\/pressed: #2803018F;
+  --color\/stroke\/high\/selected: #2803017A;
+  --color\/stroke\/success\/rest: #017E0F;
+  --color\/stroke\/success\/rest-muted: #61D058;
+  --color\/stroke\/attention\/rest: #E6B037;
+  --color\/stroke\/attention\/rest-muted: #F8D27C;
+  --color\/stroke\/important\/rest: #C5281B;
+  --color\/stroke\/important\/rest-muted: #F2A292;
+  --color\/stroke\/accessible\/rest: #1B1918;
+  --color\/stroke\/primary\/rest: #ED0000;
+  --gap\/gap-14: 56;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-16: 64;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-18: 72;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-20: 80;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-24: 96;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-28: 112;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-32: 128;  /* Controlling gutters between grid and flexbox items */
+  --gap\/gap-64: 256;  /* Controlling gutters between grid and flexbox items */
+  --padding\/p-0: 0;  /* Utilities for controlling an element's padding. */
+  --padding\/p-0\,5: 2;  /* Controlling the space between child elements */
+  --padding\/p-1: 4;  /* Controlling the space between child elements */
+  --padding\/p-1\,5: 6;  /* Controlling the space between child elements */
+  --padding\/p-2: 8;  /* Controlling the space between child elements */
+  --padding\/p-2\,5: 10;  /* Controlling the space between child elements */
+  --padding\/p-3: 12;  /* Utilities for controlling an element's padding. */
+  --padding\/p-3\,5: 14;  /* Utilities for controlling an element's padding. */
+  --padding\/p-4: 16;  /* Utilities for controlling an element's padding. */
+  --padding\/p-5: 20;  /* Utilities for controlling an element's padding. */
+  --padding\/p-6: 24;  /* Utilities for controlling an element's padding. */
+  --padding\/p-7: 28;  /* Controlling the space between child elements */
+  --padding\/p-8: 32;  /* Utilities for controlling an element's padding. */
+  --padding\/p-9: 36;  /* Utilities for controlling an element's padding. */
+  --padding\/p-10: 40;  /* Utilities for controlling an element's padding. */
+  --padding\/p-11: 44;  /* Utilities for controlling an element's padding. */
+  --padding\/p-12: 48;  /* Utilities for controlling an element's padding. */
+  --color\/stroke\/secondary\/rest: #62001D;
+  --opacity\/opacity-0: 0;  /* Controlling element opacity */
+  --opacity\/opacity-5: 5;  /* Controlling element opacity */
+  --opacity\/opacity-10: 10;  /* Controlling element opacity */
+  --opacity\/opacity-20: 20;  /* Controlling element opacity */
+  --opacity\/opacity-25: 25;  /* Controlling element opacity */
+  --opacity\/opacity-30: 30;  /* Controlling element opacity */
+  --opacity\/opacity-40: 40;  /* Controlling element opacity */
+  --opacity\/opacity-50: 50;  /* Controlling element opacity */
+  --opacity\/opacity-60: 60;  /* Controlling element opacity */
+  --opacity\/opacity-70: 70;  /* Controlling element opacity */
+  --opacity\/opacity-80: 80;  /* Controlling element opacity */
+  --opacity\/opacity-90: 90;  /* Controlling element opacity */
+  --opacity\/opacity-95: 95;  /* Controlling element opacity */
+  --opacity\/opacity-100: 100;  /* Controlling element opacity */
+  --max-w\/max-w-screen-sm: 640;  /* The max-w-screen-{breakpoint} classes can be used to give an element a max-width matching a specific breakpoint. These values are automatically derived from the theme.screens section of your tailwind.config.js file. */
+  --max-w\/max-w-screen-md: 768;  /* The max-w-screen-{breakpoint} classes can be used to give an element a max-width matching a specific breakpoint. These values are automatically derived from the theme.screens section of your tailwind.config.js file. */
+  --max-w\/max-w-screen-lg: 1024;  /* The max-w-screen-{breakpoint} classes can be used to give an element a max-width matching a specific breakpoint. These values are automatically derived from the theme.screens section of your tailwind.config.js file. */
+  --max-w\/max-w-screen-xl: 1280;  /* The max-w-screen-{breakpoint} classes can be used to give an element a max-width matching a specific breakpoint. These values are automatically derived from the theme.screens section of your tailwind.config.js file. */
+  --max-w\/max-w-screen-2xl: 1536;  /* The max-w-screen-{breakpoint} classes can be used to give an element a max-width matching a specific breakpoint. These values are automatically derived from the theme.screens section of your tailwind.config.js file. */
+  --max-w\/max-content-width: 1536;  /* The max-w-screen-{breakpoint} classes can be used to give an element a max-width matching a specific breakpoint. These values are automatically derived from the theme.screens section of your tailwind.config.js file. */
+  --radius\/radius-sm: var(--border-radius\/rounded);  /* Small border radius for card, input and buttons */
+  --radius\/radius-md: var(--border-radius\/rounded-md);  /* Medium border radius for card, input and buttons */
+  --radius\/radius-lg: var(--border-radius\/rounded-lg);  /* Border radius for card, input and buttons */
+  --radius\/radius-xl: var(--border-radius\/rounded-xl);  /* Border radius for card, input and buttons */
+  --state\/hover: var(--opacity\/opacity-80);
+  --state\/disabled: var(--opacity\/opacity-50);
+  --font-size\/text-xs: 12;
+  --font-size\/text-s: 14;
+  --font-size\/text-base: 16;
+  --font-size\/text-lg: 18;
+  --font-size\/text-xl: 20;
+  --font-size\/text-2xl: 24;
+  --font-size\/text-3xl: 30;
+  --font-size\/text-4xl: 36;
+  --font-size\/text-5xl: 48;
+  --font-size\/text-6xl: 60;
+  --font-size\/text-7xl: 72;
+  --font-size\/text-8xl: 96;
+  --font-size\/text-9xl: 128;
+  --line-height\/leading-3: 12;
+  --line-height\/leading-4: 16;
+  --line-height\/leading-5: 20;
+  --line-height\/leading-6: 24;
+  --line-height\/leading-7: 28;
+  --line-height\/leading-8: 32;
+  --line-height\/leading-9: 36;
+  --line-height\/leading-10: 40;
+  --line-height\/leading-11: 44;
+  --line-height\/leading-12: 48;
+  --line-height\/leading-13: 52;
+  --line-height\/leading-14: 56;
+  --line-height\/leading-15: 60;
+  --line-height\/leading-16: 64;
+  --line-height\/leading-17: 68;
+  --line-height\/leading-18: 72;
+  --line-height\/leading-19: 76;
+  --line-height\/leading-20: 80;
+  --line-height\/leading-21: 84;
+  --line-height\/leading-22: 88;
+  --line-height\/leading-23: 92;
+  --line-height\/leading-24: 96;
+  --line-height\/leading-25: 100;
+  --font-weight\/font-normal: 400;
+  --font-weight\/font-medium: 500;
+  --font-weight\/font-bold: 700;
+  --font-family\/arena-pro: 'Svenska Spel Arena Pro', sans-serif;
+  --font-family\/plan-pro: 'Svenska Spel Plan Pro', sans-serif;
+  --color\/stroke\/ring\/rest: #000;  /* Ring colour used for focus state */
+  --components\/switch\/handle-bg: #FFF;
+  --system\/scrim: #0006;
+  --base\/blue: #256FEA;
+  --components\/header\/bg\/rest: #FFEAE7;
+  --min-width: 320;
+  --max-width: 640;
+  --grid-columns: 4;
+  --gutter: var(--gap\/gap-4);
+  --mobile: true;
+  --table-xs: 32;
+  --table-sm: 48;
+  --table-md: 76;
+  --table-l: 96;
+  --state\/number: 0;
+  --color\/accent\/secondary\/bg\/rest: #62001D;
+  --color\/accent\/secondary\/fg\/default: #FFF;
+  --color\/accent\/secondary\/fg\/muted: #FFD5CE;
+  --color\/accent\/secondary\/bg\/hover: #4D051D;
+  --color\/accent\/secondary\/bg\/pressed: #28010E;
+  --color\/accent\/secondary\/bg\/selected: #3B0316;  /* Placeholder colour of the primary button background on hover (because there is no HSLA or RGBA support in variables now) */
+  --color\/accent\/🚧-tertiary\/bg\/rest: #ED0000;
+  --color\/accent\/🚧-tertiary\/fg\/default: #FFF;
+  --color\/accent\/🚧-tertiary\/fg\/muted: #FFD5CE;
+  --color\/accent\/🚧-tertiary\/bg\/hover: #D10011;
+  --color\/accent\/🚧-tertiary\/bg\/pressed: #A20020;
+  --color\/accent\/🚧-tertiary\/bg\/selected: #B8001F;
+  --color\/accent\/🚧-tertiary-variant\/bg\/rest: #FFD5CE;
+  --color\/accent\/🚧-tertiary-variant\/bg\/hover: #FFBDB2;
+  --color\/accent\/🚧-tertiary-variant\/bg\/pressed: #FF9485;
+  --color\/accent\/🚧-tertiary-variant\/bg\/selected: #FFAB9E;
+  --color\/accent\/🚧-tertiary-variant\/fg\/default: #86102C;
+  --color\/accent\/🚧-tertiary-variant\/fg\/muted: #ED0000;
+  --display\/l: var(--font-size\/text-4xl);
+  --display\/leading-l: var(--line-height\/leading-10);
+  --display\/m: var(--font-size\/text-3xl);
+  --display\/leading-m: var(--line-height\/leading-8);
+  --heading\/l: var(--font-size\/text-3xl);
+  --heading\/m: var(--font-size\/text-2xl);
+  --heading\/s: var(--font-size\/text-xl);
+  --heading\/xs: var(--font-size\/text-lg);
+  --body\/m: var(--font-size\/text-base);
+  --body\/s: var(--font-size\/text-s);
+  --content\/label-m: var(--font-size\/text-base);
+  --content\/label-s: var(--font-size\/text-s);
+  --content\/caption: var(--font-size\/text-xs);
+}
+
+/* About svs-compact-hero-title-display: Titles in Hero */
+.svs-compact-hero-title-display {
+  font-family: "Svenska Spel Arena Pro";
+  font-style: "Bold";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
+}
+
+/* About svs-compact-hero-title-default: Titles in Hero */
+.svs-compact-hero-title-default {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
+}
+
+/* About svs-compact-hero-lead-default: Lead in Hero, supporting text */
+.svs-compact-hero-lead-default {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+/* About svs-compact-page-title: Titles in Page */
+.svs-compact-page-title {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0px;
+}
+
+/* About svs-compact-page-lead: Lead in Page supporting text */
+.svs-compact-page-lead {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+/* About svs-compact-section-title: Titles in Sections */
+.svs-compact-section-title {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0px;
+}
+
+/* About svs-compact-card-title: Title in Cards */
+.svs-compact-card-title {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2000000476837158;
+  letter-spacing: 0px;
+}
+
+/* About svs-compact-card-subtitle: Supportive text in cards */
+.svs-compact-card-subtitle {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+/* About svs-relaxed-hero-title-display: Titles in Hero */
+.svs-relaxed-hero-title-display {
+  font-family: "Svenska Spel Arena Pro";
+  font-style: "Bold";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 0.9700000286102295;
+  letter-spacing: 0px;
+}
+
+/* About svs-relaxed-hero-title-default: Titles in Hero */
+.svs-relaxed-hero-title-default {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0px;
+}
+
+/* About svs-relaxed-hero-lead-default: Lead in Hero, supporting text */
+.svs-relaxed-hero-lead-default {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+/* About svs-relaxed-page-title: Titles in Page */
+.svs-relaxed-page-title {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0px;
+}
+
+/* About svs-relaxed-page-lead: Lead in Page supporting text */
+.svs-relaxed-page-lead {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+/* About svs-relaxed-section-title: Titles in Sections */
+.svs-relaxed-section-title {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0px;
+}
+
+/* About svs-relaxed-card-title: Title in Cards */
+.svs-relaxed-card-title {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2000000476837158;
+  letter-spacing: 0px;
+}
+
+/* About svs-relaxed-card-subtitle: Supportive text in cards */
+.svs-relaxed-card-subtitle {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+/* About svs-body-base-normal: Body text ususaly used in section page - shared for compact and relaxed theme. */
+.svs-body-base-normal {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+/* About svs-body-base-strong: Use instead of Bold for emphasized body text. Rendered with medium font weight. - shared for compact and relaxed theme. */
+.svs-body-base-strong {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+/* About svs-body-s-normal: Body small, used for small body text. - shared for compact and relaxed theme. */
+.svs-body-s-normal {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+/* About svs-body-s-strong: Use instead of Bold for emphasized body text. Rendered with medium font weight. - shared for compact and relaxed theme. */
+.svs-body-s-strong {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+/* About svs-meta-label: Label for Data och other information – shared for compact and relaxed theme. */
+.svs-meta-label {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+/* About svs-meta-value: Show Value of Data or other information  – shared for compact and relaxed theme. */
+.svs-meta-value {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+/* About svs-helper-text: Descriptions, helper, legal text  – shared for compact and relaxed theme. */
+.svs-helper-text {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+/* About system-brand-display-9xl: Jumbo Headings Brand */
+.system-brand-display-9xl {
+  font-family: "Svenska Spel Arena Pro";
+  font-style: "Bold";
+  font-size: 128px;
+  font-weight: 700;
+  line-height: 0.9700000286102295;
+  letter-spacing: 0px;
+}
+
+/* About system-brand-display-8xl: Huge Headings Brand */
+.system-brand-display-8xl {
+  font-family: "Svenska Spel Arena Pro";
+  font-style: "Bold";
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 0.9700000286102295;
+  letter-spacing: 0px;
+}
+
+/* About system-brand-display-7xl: Big Headings Brand */
+.system-brand-display-7xl {
+  font-family: "Svenska Spel Arena Pro";
+  font-style: "Bold";
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 0.9700000286102295;
+  letter-spacing: 0px;
+}
+
+/* About system-brand-display-6xl: Big Headings Brand */
+.system-brand-display-6xl {
+  font-family: "Svenska Spel Arena Pro";
+  font-style: "Bold";
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 0.9700000286102295;
+  letter-spacing: 0px;
+}
+
+/* About system-brand-heading-5xl: Large Headings Brand */
+.system-brand-heading-5xl {
+  font-family: "Svenska Spel Arena Pro";
+  font-style: "Bold";
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0px;
+}
+
+/* About system-brand-heading-4xl: Headings Brand
+ */
+.system-brand-heading-4xl {
+  font-family: "Svenska Spel Arena Pro";
+  font-style: "Bold";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0px;
+}
+
+.system-product-display-8xl {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 100px;
+  letter-spacing: 0px;
+}
+
+.system-product-display-7xl {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 84px;
+  letter-spacing: 0px;
+}
+
+.system-product-display-6xl {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 68px;
+  letter-spacing: 0px;
+}
+
+.system-product-heading-5xl {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0px;
+}
+
+.system-product-heading-4xl {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0px;
+}
+
+.system-product-heading-3xl {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0px;
+}
+
+/* About system-brand-heading-3xl: Headings Brand */
+.system-brand-heading-3xl {
+  font-family: "Svenska Spel Arena Pro";
+  font-style: "Bold";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 0.9700000286102295;
+  letter-spacing: 0px;
+}
+
+.system-product-title-3xl-regular {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0px;
+}
+
+.system-product-title-3xl-medium {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0px;
+}
+
+.system-product-title-3xl-bold {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0px;
+}
+
+.system-product-title-2xl-regular {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+.system-product-title-2xl-medium {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+.system-product-title-2xl-bold {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-xl-regular {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-xl-leading-none {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.system-product-text-xl-medium {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-xl-medium-leading-none {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.system-product-text-xl-bold {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-xl-bold-leading-none {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.system-product-text-lg-regular {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-lg-leading-none {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.system-product-text-lg-medium {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-lg-medium-leading-none {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.system-product-text-lg-bold {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-lg-bold-leading-none {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.system-product-text-base-regular {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-base-regular-leading-none {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.system-product-text-base-regular-underline {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-base-medium {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-base-medium-leading-none {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.system-product-text-base-medium-underline {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-base-bold {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-base-bold-leading-none {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.system-product-text-base-bold-underline {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-s-s-regular {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-s-s-regular-leading-none {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.system-product-text-s-s-regular-underline {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-s-s-medium {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-s-medium-leading-none {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.system-product-text-s-200-bold {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-s-200-bold-leading-none {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0px;
+}
+
+.system-product-text-xs-regular {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Regular";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-xs-medium {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0px;
+}
+
+.system-product-text-xs-bold {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Bold";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0px;
+}
+
+/* About system-product-button-link-button-link-xl: Button Link */
+.system-product-button-link-button-link-xl {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+/* About system-product-button-link-button-link-l: Button Link */
+.system-product-button-link-button-link-l {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+/* About system-product-button-link-button-link-m: Button Link */
+.system-product-button-link-button-link-m {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+/* About system-product-button-link-button-link-s: Button Link */
+.system-product-button-link-button-link-s {
+  font-family: "Svenska Spel Plan Pro";
+  font-style: "Medium";
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+.svs-relaxed-svs-relaxed {
+  font-family: "Inter";
+  font-style: "Regular";
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+

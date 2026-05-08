@@ -1,0 +1,696 @@
+{
+  "schema": {
+    "name": "figma_make_ai_ux_ui_industry_standards_guidelines",
+    "version": "1.0.0",
+    "format": "json",
+    "intended_use": [
+      "Figma Make Kit AI UX/UI design guidance",
+      "AI-generated product screen calibration",
+      "Design-system-aware interface generation",
+      "Modern UX/UI quality review",
+      "Component, flow, page, and product experience critique"
+    ],
+    "calibration_level": "high",
+    "scope": "Broad up-to-date UX/UI industry standards, design principles, and practical guidelines for AI-assisted interface design.",
+    "important_note": "This file does not copy paid/private content from the referenced Gumroad product. It is based on publicly available UX/UI industry standards, established design systems, accessibility standards, and practical product-design principles."
+  },
+  "source_references": [
+    {
+      "name": "Nielsen Norman Group UX and usability guidance",
+      "url": "https://www.nngroup.com/articles/",
+      "why_relevant": "Research-based usability, interaction design, content, navigation, and UX evaluation guidance."
+    },
+    {
+      "name": "WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "why_relevant": "Current W3C accessibility guidance for making web content more accessible."
+    },
+    {
+      "name": "Material Design 3",
+      "url": "https://m3.material.io/",
+      "why_relevant": "Modern open-source design system guidance for components, styles, theming, motion, and interaction patterns."
+    },
+    {
+      "name": "Apple Human Interface Guidelines",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/",
+      "why_relevant": "Platform-specific best practices for Apple interfaces, hierarchy, layout, accessibility, and interaction."
+    },
+    {
+      "name": "Microsoft Fluent 2 Design System",
+      "url": "https://fluent2.microsoft.design/",
+      "why_relevant": "Modern design-system guidance with strong accessibility and inclusive design foundations."
+    },
+    {
+      "name": "IBM Carbon Design System",
+      "url": "https://carbondesignsystem.com/",
+      "why_relevant": "Enterprise-grade design system with detailed guidance on accessibility, components, patterns, and consistency."
+    },
+    {
+      "name": "U.S. Web Design System",
+      "url": "https://designsystem.digital.gov/",
+      "why_relevant": "Practical public-sector design system focused on accessibility, usability, mobile-friendly design, and trust."
+    }
+  ],
+  "ai_system_instruction": {
+    "role": "You are a senior UX/UI and product designer applying current industry standards when generating or reviewing interfaces.",
+    "primary_objective": "Create interfaces that are useful, usable, accessible, consistent, responsive, trustworthy, visually clear, and aligned with the product's design system.",
+    "behavioural_rules": [
+      "Start with user goals, context, and task success before visual styling.",
+      "Apply accessibility from the beginning, not as a final compliance layer.",
+      "Use established platform and design-system patterns before inventing new ones.",
+      "Design complete states and flows, not only polished happy-path screens.",
+      "Make hierarchy, navigation, content, interaction, and feedback clear at a glance.",
+      "Use content design as part of the interface, not as decoration.",
+      "Respect cognitive load: reduce unnecessary decisions, memory burden, and visual noise.",
+      "Support both first-time and returning users.",
+      "Design for responsive behaviour across screen sizes and input methods.",
+      "Use motion, colour, imagery, and personality only when they support meaning and usability.",
+      "Flag assumptions, risks, missing states, and unresolved design-system gaps."
+    ],
+    "do_not": [
+      "Do not design based only on aesthetics.",
+      "Do not create screens without states, errors, empty states, and edge cases.",
+      "Do not use inaccessible colour contrast or colour-only meaning.",
+      "Do not overload screens with equal-weight cards, buttons, badges, or effects.",
+      "Do not invent unconventional controls when standard components would be clearer.",
+      "Do not hide critical information in tooltips, hover states, or vague icons.",
+      "Do not use placeholder text as a label.",
+      "Do not use dark patterns, manipulative defaults, forced continuity, or confusing opt-outs.",
+      "Do not ignore privacy, trust, or risk signals in high-impact flows.",
+      "Do not generate UI that cannot realistically scale across product contexts."
+    ]
+  },
+  "industry_principles": [
+    {
+      "id": "UXUI01",
+      "name": "Start with user goals and task success",
+      "principle": "Every interface decision should support a clear user goal, job-to-be-done, or product outcome.",
+      "ai_design_guidance": [
+        "Identify the user's primary goal before designing layout or visual style.",
+        "Design the main path to completion first, then add secondary paths.",
+        "Make the next useful action clear.",
+        "Remove elements that do not support the user goal, decision, or confidence."
+      ],
+      "figma_make_prompt_cues": [
+        "Define the user's goal and context before generating the screen.",
+        "Prioritise the primary task in layout, copy, and hierarchy.",
+        "Show how the user completes the task from entry to success."
+      ],
+      "review_questions": [
+        "What is the user's main goal on this screen?",
+        "Is the primary path obvious?",
+        "Does every major element support task completion?",
+        "What would distract or slow the user down?"
+      ],
+      "failure_patterns": [
+        "Beautiful but unclear screen",
+        "Multiple competing primary actions",
+        "Product goals prioritised over user understanding",
+        "No clear completion state"
+      ],
+      "severity_if_ignored": "Critical"
+    },
+    {
+      "id": "UXUI02",
+      "name": "Accessibility and inclusive design by default",
+      "principle": "Interfaces should be perceivable, operable, understandable, and robust for people with diverse abilities, contexts, devices, and assistive technologies.",
+      "ai_design_guidance": [
+        "Apply WCAG 2.2-oriented thinking early.",
+        "Ensure text, icons, controls, and focus states have sufficient contrast.",
+        "Provide keyboard, screen-reader, and reduced-motion considerations.",
+        "Do not rely on colour alone to communicate meaning.",
+        "Use clear labels, accessible names, logical focus order, and visible focus indicators."
+      ],
+      "figma_make_prompt_cues": [
+        "Design with accessible contrast, keyboard focus, screen-reader labels, and non-colour cues.",
+        "Include visible focus, disabled, error, selected, hover, and pressed states.",
+        "Ensure touch targets and spacing work for users with motor limitations."
+      ],
+      "review_questions": [
+        "Can the interface be understood without colour?",
+        "Is focus visible and logical?",
+        "Are controls labelled clearly?",
+        "Are text and icons readable on every surface?",
+        "Does the design avoid exclusionary assumptions?"
+      ],
+      "failure_patterns": [
+        "Low contrast text",
+        "Colour-only error or selection state",
+        "No visible focus state",
+        "Tiny touch targets",
+        "Icon-only controls without accessible labels",
+        "Motion required to understand state"
+      ],
+      "severity_if_ignored": "Critical"
+    },
+    {
+      "id": "UXUI03",
+      "name": "Clear information architecture and navigation",
+      "principle": "Users should understand where they are, what is available, and how to move through the product.",
+      "ai_design_guidance": [
+        "Use navigation patterns that match product complexity and platform expectations.",
+        "Make current location, active states, and hierarchy visible.",
+        "Group related information logically.",
+        "Use labels that match user language, not internal organisation.",
+        "Avoid deep or ambiguous navigation where users cannot predict what they will find."
+      ],
+      "figma_make_prompt_cues": [
+        "Include current location, active navigation state, and clear page hierarchy.",
+        "Structure navigation around user tasks and product mental models.",
+        "Use breadcrumbs, tabs, side navigation, or step indicators when they reduce confusion."
+      ],
+      "review_questions": [
+        "Can users tell where they are?",
+        "Can users predict where a navigation item leads?",
+        "Are related items grouped together?",
+        "Is the information architecture based on user mental models?",
+        "Is the navigation pattern appropriate for this product depth?"
+      ],
+      "failure_patterns": [
+        "Unclear active state",
+        "Navigation based on company departments",
+        "Too many top-level options",
+        "Hidden critical sections",
+        "Duplicate or overlapping menu labels"
+      ],
+      "severity_if_ignored": "High"
+    },
+    {
+      "id": "UXUI04",
+      "name": "Strong visual hierarchy and layout clarity",
+      "principle": "Layout, spacing, typography, colour, and grouping should make importance and relationships immediately understandable.",
+      "ai_design_guidance": [
+        "Create a clear hierarchy between title, key content, supporting content, and actions.",
+        "Use spacing and grouping to communicate relationships.",
+        "Avoid giving too many elements equal visual weight.",
+        "Use grids and alignment to create calm, scannable layouts.",
+        "Make primary actions visually distinct from secondary actions."
+      ],
+      "figma_make_prompt_cues": [
+        "Use clear typographic scale, spacing, grouping, and alignment.",
+        "Make the primary action and most important information easy to find.",
+        "Avoid visual clutter and equal-weight content blocks."
+      ],
+      "review_questions": [
+        "What does the user notice first?",
+        "Is the primary information visually dominant?",
+        "Are related elements grouped clearly?",
+        "Does spacing make the layout easier to scan?",
+        "Are primary and secondary actions clearly differentiated?"
+      ],
+      "failure_patterns": [
+        "Everything looks equally important",
+        "Dense content with weak grouping",
+        "Primary button hidden among secondary actions",
+        "Inconsistent spacing",
+        "Decorative visual treatment competing with content"
+      ],
+      "severity_if_ignored": "High"
+    },
+    {
+      "id": "UXUI05",
+      "name": "Content design and plain language",
+      "principle": "Interface copy should help users understand, decide, act, and recover using clear, concise, human language.",
+      "ai_design_guidance": [
+        "Write labels, headings, helper text, empty states, and errors in plain language.",
+        "Use action-oriented button text where it improves clarity.",
+        "Avoid jargon, vague CTA labels, legalistic wording, and unnecessary explanation.",
+        "Match tone to context: calm for errors, confident for confirmation, concise for repeated workflows.",
+        "Place guidance close to where users need it."
+      ],
+      "figma_make_prompt_cues": [
+        "Use clear headings, descriptive labels, concise helper text, and actionable microcopy.",
+        "Write error and empty-state copy that explains what happened and what to do next.",
+        "Avoid vague labels like Submit, Continue, or Click here when a more specific action is useful."
+      ],
+      "review_questions": [
+        "Would a first-time user understand the copy?",
+        "Does each CTA describe the action or outcome?",
+        "Is helper text concise and close to the task?",
+        "Does error copy help users recover?",
+        "Is the tone appropriate for risk and emotion?"
+      ],
+      "failure_patterns": [
+        "Internal jargon",
+        "Vague button labels",
+        "Placeholder used as label",
+        "Generic empty state",
+        "Error copy without next step",
+        "Too much explanatory text before the user needs it"
+      ],
+      "severity_if_ignored": "High"
+    },
+    {
+      "id": "UXUI06",
+      "name": "Consistency through design-system alignment",
+      "principle": "Interfaces should use consistent components, tokens, behaviours, and patterns so users can transfer learning across the product.",
+      "ai_design_guidance": [
+        "Use existing design-system components and tokens first.",
+        "Keep labels, states, spacing, and interaction behaviour consistent.",
+        "Map each UI need to the closest established component pattern.",
+        "Create exceptions only when a clear user need justifies them.",
+        "Flag design-system gaps instead of inventing inconsistent one-off solutions."
+      ],
+      "figma_make_prompt_cues": [
+        "Use design-system tokens for colour, type, spacing, radius, elevation, and motion.",
+        "Reuse existing components for buttons, forms, alerts, cards, navigation, modals, and tables.",
+        "Keep component behaviour consistent across screens and states."
+      ],
+      "review_questions": [
+        "Does this use existing components and tokens?",
+        "Are repeated patterns consistent?",
+        "Does any new pattern have a clear reason?",
+        "Could this screen scale across product teams?",
+        "Are design-system gaps documented?"
+      ],
+      "failure_patterns": [
+        "One-off components",
+        "Mixed button styles",
+        "Different spacing logic between sections",
+        "States missing from component variants",
+        "Pattern novelty without user benefit"
+      ],
+      "severity_if_ignored": "High"
+    },
+    {
+      "id": "UXUI07",
+      "name": "Responsive and adaptive design",
+      "principle": "The experience should adapt gracefully across devices, screen sizes, input methods, orientations, and density levels.",
+      "ai_design_guidance": [
+        "Design for mobile, tablet, desktop, and large-screen behaviour when relevant.",
+        "Define how grids, navigation, cards, tables, forms, and modals adapt.",
+        "Support touch, mouse, keyboard, and assistive input.",
+        "Avoid fixed layouts that break with longer text, localisation, or zoom.",
+        "Consider content density and progressive disclosure across breakpoints."
+      ],
+      "figma_make_prompt_cues": [
+        "Include responsive behaviour for small, medium, and large screens.",
+        "Define how navigation, forms, tables, and action areas adapt.",
+        "Design flexible layouts that handle long text, localisation, zoom, and dynamic content."
+      ],
+      "review_questions": [
+        "Does the layout work on smaller screens?",
+        "Do actions remain reachable and clear?",
+        "Does content wrap or truncate safely?",
+        "How do tables or dense data adapt?",
+        "Does the design support touch and keyboard input?"
+      ],
+      "failure_patterns": [
+        "Desktop-only layout",
+        "Fixed-height cards that break with real content",
+        "Tables unusable on mobile",
+        "Sticky actions covering content",
+        "Touch targets too small",
+        "No responsive navigation behaviour"
+      ],
+      "severity_if_ignored": "High"
+    },
+    {
+      "id": "UXUI08",
+      "name": "Complete state and edge-case design",
+      "principle": "A usable product includes all meaningful states: loading, empty, error, success, disabled, selected, focused, offline, permission, and partial-data scenarios.",
+      "ai_design_guidance": [
+        "Design beyond the ideal happy path.",
+        "Include state variants for every major component and flow.",
+        "Create useful empty states that explain what to do next.",
+        "Differentiate loading, no results, no access, failed load, and unavailable service.",
+        "Show recovery options for errors and interruptions."
+      ],
+      "figma_make_prompt_cues": [
+        "Generate the default, loading, empty, error, success, disabled, selected, focused, and permission states.",
+        "Include realistic edge cases such as long names, missing data, no results, offline, expired session, and partial failure.",
+        "Provide recovery paths and helpful microcopy."
+      ],
+      "review_questions": [
+        "What happens before data loads?",
+        "What happens if there is no data?",
+        "What happens if the user lacks access?",
+        "What happens if the action fails?",
+        "Can users recover or continue?"
+      ],
+      "failure_patterns": [
+        "Only happy path shown",
+        "Generic empty state",
+        "Spinner with no fallback",
+        "No permission state",
+        "No partial failure handling",
+        "Disabled button with no explanation"
+      ],
+      "severity_if_ignored": "Critical"
+    },
+    {
+      "id": "UXUI09",
+      "name": "Forms, inputs, and data entry quality",
+      "principle": "Forms should reduce effort, prevent errors, explain requirements, and help users complete data entry confidently.",
+      "ai_design_guidance": [
+        "Ask only for necessary information.",
+        "Use persistent labels and clear helper text.",
+        "Validate close to the field and at the right time.",
+        "Use appropriate input types, masks, defaults, and constraints.",
+        "Group fields logically and support review before high-impact submission."
+      ],
+      "figma_make_prompt_cues": [
+        "Design forms with clear labels, helper text, validation, error states, required/optional logic, and accessible input behaviour.",
+        "Use sensible defaults, input constraints, and review steps for risky submissions.",
+        "Reduce form length and split complex flows only when it improves comprehension."
+      ],
+      "review_questions": [
+        "Is every field necessary?",
+        "Are labels persistent and clear?",
+        "Are errors specific and close to the field?",
+        "Are required and optional fields obvious?",
+        "Can users review and correct before submitting?"
+      ],
+      "failure_patterns": [
+        "Placeholder-only labels",
+        "Late validation only after submit",
+        "Unclear required fields",
+        "Free text where structured input is safer",
+        "Long ungrouped form",
+        "No save, back, or review path"
+      ],
+      "severity_if_ignored": "High"
+    },
+    {
+      "id": "UXUI10",
+      "name": "Interaction feedback, motion, and perceived performance",
+      "principle": "The interface should feel responsive, predictable, and calm by giving timely feedback and using motion purposefully.",
+      "ai_design_guidance": [
+        "Give immediate feedback for user actions.",
+        "Use loading indicators, skeletons, optimistic UI, or progress indicators appropriately.",
+        "Use motion to explain relationships, transitions, or status changes.",
+        "Respect reduced-motion preferences.",
+        "Avoid decorative motion that slows comprehension or distracts from tasks."
+      ],
+      "figma_make_prompt_cues": [
+        "Include feedback for clicks, taps, saves, submissions, transitions, and long-running operations.",
+        "Use purposeful motion for state changes and navigation transitions.",
+        "Design reduced-motion alternatives."
+      ],
+      "review_questions": [
+        "Does every important action produce feedback?",
+        "Do loading states set the right expectation?",
+        "Does motion explain or distract?",
+        "Can users understand progress?",
+        "Is there a reduced-motion-safe version?"
+      ],
+      "failure_patterns": [
+        "No response after action",
+        "Long spinner with no context",
+        "Motion used only as decoration",
+        "Animations hiding state changes",
+        "No reduced-motion consideration"
+      ],
+      "severity_if_ignored": "Medium to High"
+    },
+    {
+      "id": "UXUI11",
+      "name": "Trust, ethics, privacy, and transparency",
+      "principle": "Interfaces should be honest, transparent, respectful, and safe, especially when they involve personal data, money, consent, risk, or AI-generated outcomes.",
+      "ai_design_guidance": [
+        "Make costs, risks, commitments, data use, and consequences clear before users act.",
+        "Avoid dark patterns, forced choices, confusing opt-outs, disguised ads, and manipulative defaults.",
+        "Use transparent consent and privacy copy.",
+        "Explain AI-generated recommendations, limitations, or uncertainty where relevant.",
+        "Give users control over sensitive decisions and personal data."
+      ],
+      "figma_make_prompt_cues": [
+        "Design consent, privacy, payment, subscription, AI, and account flows with transparent choices and clear consequences.",
+        "Avoid manipulative hierarchy, preselected risky choices, hidden cancellation, or confusing confirmation copy.",
+        "Show trust signals only where they are truthful and useful."
+      ],
+      "review_questions": [
+        "Is the user clearly informed before committing?",
+        "Are privacy and consent choices understandable?",
+        "Can users decline or change their mind easily?",
+        "Are defaults fair and safe?",
+        "Could this pattern be perceived as manipulative?"
+      ],
+      "failure_patterns": [
+        "Hidden fees",
+        "Preselected consent",
+        "Hard-to-find cancellation",
+        "Misleading urgency",
+        "Ambiguous AI recommendation",
+        "Trust badges used decoratively without substance"
+      ],
+      "severity_if_ignored": "Critical"
+    },
+    {
+      "id": "UXUI12",
+      "name": "Scalable visual design and brand expression",
+      "principle": "Visual design should express the brand while preserving usability, accessibility, consistency, and scalability across product contexts.",
+      "ai_design_guidance": [
+        "Use brand expression intentionally, not everywhere.",
+        "Balance colour, typography, imagery, iconography, depth, and motion with task clarity.",
+        "Make the visual system scalable across simple and complex screens.",
+        "Ensure brand moments do not weaken hierarchy or accessibility.",
+        "Use design tokens to keep brand expression consistent."
+      ],
+      "figma_make_prompt_cues": [
+        "Apply brand expression through controlled tokens, composition, illustration, tone, and motion.",
+        "Keep core product surfaces readable and calm.",
+        "Use expressive moments for onboarding, hero areas, empty states, campaigns, or key transitions where appropriate."
+      ],
+      "review_questions": [
+        "Does visual style support the task?",
+        "Is brand expression controlled and scalable?",
+        "Does typography remain readable?",
+        "Do decorative elements compete with content?",
+        "Would this system work across many product screens?"
+      ],
+      "failure_patterns": [
+        "Over-styled product UI",
+        "Brand colours reducing readability",
+        "Inconsistent illustration or icon style",
+        "Visual effects masking interaction states",
+        "Design that looks good in one screen but fails at scale"
+      ],
+      "severity_if_ignored": "Medium to High"
+    }
+  ],
+  "ui_pattern_guidelines": {
+    "navigation": {
+      "rules": [
+        "Use clear labels and visible active states.",
+        "Choose tabs for sibling views, breadcrumbs for hierarchy, side navigation for broad sections, and steppers for linear processes.",
+        "Keep critical navigation available without overwhelming the primary task."
+      ],
+      "avoid": [
+        "Ambiguous icons without labels",
+        "Deep hidden navigation",
+        "Mixing navigation and actions without clear distinction"
+      ]
+    },
+    "buttons_and_actions": {
+      "rules": [
+        "One clear primary action per section or decision area.",
+        "Secondary and tertiary actions should be visually quieter.",
+        "Destructive actions should be separated, labelled clearly, and confirmed or undoable."
+      ],
+      "avoid": [
+        "Multiple primary buttons competing",
+        "Vague labels like OK when outcome matters",
+        "Destructive action placed too close to safe action"
+      ]
+    },
+    "forms": {
+      "rules": [
+        "Use persistent labels, clear validation, grouped fields, safe defaults, and useful helper text.",
+        "Place errors close to affected fields.",
+        "Support save, back, edit, and review for longer or high-risk forms."
+      ],
+      "avoid": [
+        "Placeholder-only labels",
+        "Unclear required logic",
+        "Validation only after full submission"
+      ]
+    },
+    "cards_and_lists": {
+      "rules": [
+        "Use cards when items need grouped metadata or independent actions.",
+        "Use lists when scanning and comparison are more important than visual separation.",
+        "Prioritise the key information and avoid card bloat."
+      ],
+      "avoid": [
+        "Too many equal-weight cards",
+        "Metadata that does not support decision-making",
+        "Hidden primary actions"
+      ]
+    },
+    "tables_and_data": {
+      "rules": [
+        "Support sorting, filtering, scanning, selection, pagination or virtualisation where relevant.",
+        "Keep important columns visible and labels clear.",
+        "Provide empty, no-results, loading, and error states."
+      ],
+      "avoid": [
+        "Unresponsive desktop tables on mobile",
+        "No explanation for missing data",
+        "Overloaded cells without hierarchy"
+      ]
+    },
+    "modals_and_overlays": {
+      "rules": [
+        "Use modals for focused, interruptive, or high-impact decisions.",
+        "Provide clear title, purpose, primary action, secondary action, and close/cancel behaviour.",
+        "Return focus logically after closing."
+      ],
+      "avoid": [
+        "Modals for routine content",
+        "No clear escape route",
+        "Stacked or nested modals"
+      ]
+    },
+    "alerts_and_messages": {
+      "rules": [
+        "Use inline messages for local feedback, banners for page/system feedback, and toasts for temporary low-risk confirmation.",
+        "Match severity to visual weight.",
+        "Include recovery action when needed."
+      ],
+      "avoid": [
+        "Toast as the only critical error message",
+        "Overusing red or warning styles",
+        "Generic messages without next steps"
+      ]
+    },
+    "empty_states": {
+      "rules": [
+        "Explain why the state is empty and what the user can do next.",
+        "Use empty states to guide setup, search refinement, permission request, or first action.",
+        "Keep tone helpful and concise."
+      ],
+      "avoid": [
+        "Blank areas",
+        "Decorative empty states without guidance",
+        "Same empty state used for no data, no results, and no access"
+      ]
+    }
+  },
+  "cross_cutting_quality_rules": {
+    "accessibility": [
+      "Use WCAG-oriented contrast and interaction thinking.",
+      "Do not rely on colour alone.",
+      "Support keyboard navigation and visible focus.",
+      "Use accessible names and logical structure.",
+      "Respect reduced motion and zoom."
+    ],
+    "responsive_design": [
+      "Define behaviour across breakpoints.",
+      "Avoid fixed layouts that break with text expansion.",
+      "Keep actions reachable and content scannable.",
+      "Adapt navigation and data-heavy patterns."
+    ],
+    "content": [
+      "Use user-facing language.",
+      "Keep headings informative.",
+      "Make CTAs specific when outcome matters.",
+      "Write errors and empty states with next steps.",
+      "Avoid internal jargon."
+    ],
+    "states": [
+      "Default",
+      "Hover",
+      "Pressed",
+      "Focused",
+      "Selected",
+      "Disabled",
+      "Loading",
+      "Empty",
+      "Success",
+      "Error",
+      "Warning",
+      "No access",
+      "Offline or unavailable",
+      "Partial data"
+    ],
+    "ethics": [
+      "Avoid dark patterns.",
+      "Make consent reversible.",
+      "Use fair defaults.",
+      "Explain consequences before commitment.",
+      "Respect user autonomy."
+    ]
+  },
+  "ai_review_framework": {
+    "scoring_scale": {
+      "0": "Not addressed",
+      "1": "Weak or mostly decorative",
+      "2": "Partially addressed",
+      "3": "Usable but missing edge cases",
+      "4": "Strong and production-minded",
+      "5": "Excellent, accessible, scalable, and well-calibrated"
+    },
+    "review_sequence": [
+      "1. Identify the user goal, context, and primary task.",
+      "2. Check hierarchy, layout, navigation, and primary action clarity.",
+      "3. Check accessibility: contrast, labels, focus, keyboard, colour independence, motion.",
+      "4. Check design-system alignment: components, tokens, spacing, states, naming.",
+      "5. Check complete states and edge cases.",
+      "6. Check content quality and tone.",
+      "7. Check responsiveness and input methods.",
+      "8. Check forms, data entry, errors, and recovery.",
+      "9. Check trust, privacy, ethics, and high-impact decisions.",
+      "10. Remove clutter and improve visual focus.",
+      "11. Flag assumptions and design-system gaps."
+    ],
+    "quality_threshold": {
+      "minimum_average_score": 4,
+      "critical_principles": [
+        "UXUI01",
+        "UXUI02",
+        "UXUI08",
+        "UXUI11"
+      ],
+      "rule": "If user goal clarity, accessibility, complete states, or trust/ethics score below 3, revise before handoff."
+    }
+  },
+  "figma_make_snippets": {
+    "general_screen_generation": "Generate this screen using current UX/UI industry standards. Start with the user goal, create clear hierarchy, use accessible and responsive design, align with design-system components and tokens, include complete states and edge cases, use plain language, provide visible feedback, avoid dark patterns, and make the primary action obvious.",
+    "product_flow_generation": "Design the complete flow from entry to success. Include happy path, cancellation, editing, loading, empty, error, permission, success, and recovery states. Prioritise user control, accessibility, trust, and clear consequences.",
+    "component_generation": "Create this component using design-system conventions. Include default, hover, pressed, focused, selected, disabled, loading, success, warning, and error states where relevant. Ensure accessible names, visible focus, readable contrast, and consistent token usage.",
+    "ux_review": "Review this design against modern UX/UI standards. Score user goal clarity, accessibility, navigation, hierarchy, content, consistency, responsiveness, states, forms, feedback, trust, and visual scalability from 0-5. List risks and recommended improvements.",
+    "red_team_review": "Act as a critical UX reviewer. Find where users could misunderstand, get lost, make errors, feel manipulated, miss feedback, struggle with accessibility, or fail on smaller screens. Recommend concrete fixes."
+  },
+  "machine_readable_summary": {
+    "must_have": [
+      "clear_user_goal",
+      "obvious_primary_action",
+      "accessible_contrast",
+      "visible_focus_state",
+      "keyboard_and_touch_support",
+      "responsive_layout",
+      "plain_language",
+      "design_system_alignment",
+      "complete_ui_states",
+      "error_recovery",
+      "safe_defaults",
+      "trustworthy_consent",
+      "semantic_tokens",
+      "scalable_visual_hierarchy"
+    ],
+    "avoid": [
+      "aesthetic_only_design",
+      "happy_path_only",
+      "low_contrast",
+      "colour_only_meaning",
+      "placeholder_only_labels",
+      "unclear_navigation",
+      "multiple_primary_actions",
+      "one_off_components",
+      "desktop_only_layout",
+      "generic_error_messages",
+      "dark_patterns",
+      "hidden_costs_or_consequences",
+      "visual_clutter",
+      "inconsistent_states"
+    ],
+    "critical_checks": [
+      "Can the user complete the main task?",
+      "Is the interface accessible enough to proceed?",
+      "Are all important states represented?",
+      "Are risks, costs, consent, and consequences clear?",
+      "Does the design align with the product design system?"
+    ]
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "$schema": "./component-manifest.schema.json",
+  "version": "0.1.3",
+  "name": "@make-kits/svs-ui-nova",
+  "description": "Svenska Spel UI (Nova) Design System - Make Kit Component Manifest",
+  "components": {
+    "Accordion": {
+      "status": "partial",
+      "path": "components/Accordion.tsx",
+      "figmaConnect": "components/Accordion.figma.tsx",
+      "docs": "../../guidelines/components/Accordion.md",
+      "notes": "Implemented with variants: default, low-emphasis, mid-emphasis"
+    },
+    "Avatar": {
+      "status": "partial",
+      "path": "components/Avatar.tsx",
+      "figmaConnect": "components/Avatar.figma.tsx",
+      "docs": "../../guidelines/components/Avatar.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Badge": {
+      "status": "partial",
+      "path": "components/Badge.tsx",
+      "figmaConnect": "components/Badge.figma.tsx",
+      "docs": "../../guidelines/components/Badge.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "BetButton": {
+      "status": "docs-only",
+      "path": null,
+      "figmaConnect": null,
+      "docs": "../../guidelines/components/BetButton.md",
+      "notes": "Documented but not implemented"
+    },
+    "BetPrediction": {
+      "status": "docs-only",
+      "path": null,
+      "figmaConnect": null,
+      "docs": "../../guidelines/components/BetPrediction.md",
+      "notes": "Documented but not implemented"
+    },
+    "BottomSheet": {
+      "status": "partial",
+      "path": "components/BottomSheet.tsx",
+      "figmaConnect": "components/BottomSheet.figma.tsx",
+      "docs": "../../guidelines/components/BottomSheet.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Button": {
+      "status": "partial",
+      "path": "components/Button.tsx",
+      "figmaConnect": "components/Button.figma.tsx",
+      "docs": "../../guidelines/components/Button.md",
+      "notes": "Fully implemented with Code Connect"
+    },
+    "Callout": {
+      "status": "partial",
+      "path": "components/Callout.tsx",
+      "figmaConnect": "components/Callout.figma.tsx",
+      "docs": "../../guidelines/components/Callout.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Card": {
+      "status": "partial",
+      "path": "components/Card.tsx",
+      "figmaConnect": "components/Card.figma.tsx",
+      "docs": "../../guidelines/components/Cards.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Checkbox": {
+      "status": "partial",
+      "path": "components/Checkbox.tsx",
+      "figmaConnect": "components/Checkbox.figma.tsx",
+      "docs": "../../guidelines/components/Checkbox.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "ComposableModal": {
+      "status": "docs-only",
+      "path": null,
+      "figmaConnect": null,
+      "docs": "../../guidelines/components/ComposableModal.md",
+      "notes": "Documented but not implemented"
+    },
+    "DatePicker": {
+      "status": "partial",
+      "path": "components/DatePicker.tsx",
+      "figmaConnect": "components/DatePicker.figma.tsx",
+      "docs": "../../guidelines/components/DatePicker.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Dialog": {
+      "status": "partial",
+      "path": "components/Dialog.tsx",
+      "figmaConnect": "components/Dialog.figma.tsx",
+      "docs": "../../guidelines/components/Dialog.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "FloatingActionBar": {
+      "status": "partial",
+      "path": "components/FloatingActionBar.tsx",
+      "figmaConnect": "components/FloatingActionBar.figma.tsx",
+      "docs": "../../guidelines/components/FloatingActionBar.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Input": {
+      "status": "partial",
+      "path": "components/Input.tsx",
+      "figmaConnect": "components/Input.figma.tsx",
+      "docs": "../../guidelines/components/Input.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Popover": {
+      "status": "partial",
+      "path": "components/Popover.tsx",
+      "figmaConnect": "components/Popover.figma.tsx",
+      "docs": "../../guidelines/components/Popover.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Pricelabel": {
+      "status": "docs-only",
+      "path": null,
+      "figmaConnect": null,
+      "docs": "../../guidelines/components/Pricelabel.md",
+      "notes": "Documented but not implemented"
+    },
+    "RadioGroup": {
+      "status": "partial",
+      "path": "components/RadioGroup.tsx",
+      "figmaConnect": "components/RadioGroup.figma.tsx",
+      "docs": "../../guidelines/components/RadioGroup.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Select": {
+      "status": "partial",
+      "path": "components/Select.tsx",
+      "figmaConnect": "components/Select.figma.tsx",
+      "docs": "../../guidelines/components/Select.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Separator": {
+      "status": "partial",
+      "path": "components/Separator.tsx",
+      "figmaConnect": "components/Separator.figma.tsx",
+      "docs": "../../guidelines/components/Separator.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Slider": {
+      "status": "partial",
+      "path": "components/Slider.tsx",
+      "figmaConnect": "components/Slider.figma.tsx",
+      "docs": "../../guidelines/components/Slider.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Snackbar": {
+      "status": "partial",
+      "path": "components/Snackbar.tsx",
+      "figmaConnect": "components/Snackbar.figma.tsx",
+      "docs": "../../guidelines/components/Snackbar.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Switch": {
+      "status": "partial",
+      "path": "components/Switch.tsx",
+      "figmaConnect": "components/Switch.figma.tsx",
+      "docs": "../../guidelines/components/Switch.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Table": {
+      "status": "partial",
+      "path": "components/Table.tsx",
+      "figmaConnect": "components/Table.figma.tsx",
+      "docs": "../../guidelines/components/Table.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Tabs": {
+      "status": "partial",
+      "path": "components/Tabs.tsx",
+      "figmaConnect": "components/Tabs.figma.tsx",
+      "docs": "../../guidelines/components/Tabs.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "TabsMenu": {
+      "status": "partial",
+      "path": "components/TabsMenu.tsx",
+      "figmaConnect": "components/TabsMenu.figma.tsx",
+      "docs": "../../guidelines/components/TabsMenu.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "ToggleGroup": {
+      "status": "partial",
+      "path": "components/ToggleGroup.tsx",
+      "figmaConnect": "components/ToggleGroup.figma.tsx",
+      "docs": "../../guidelines/components/ToggleGroup.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    },
+    "Tooltip": {
+      "status": "partial",
+      "path": "components/Tooltip.tsx",
+      "figmaConnect": "components/Tooltip.figma.tsx",
+      "docs": "../../guidelines/components/Tooltip.md",
+      "notes": "Implemented with Code Connect template (needs node-id)"
+    }
+  },
+  "logos": {
+    "SvenskaSpelLogoHorizontalTwoRows": {
+      "status": "complete",
+      "path": "components/logos/SvenskaSpelLogoHorizontalTwoRows.tsx",
+      "docs": "components/logos/README.md",
+      "notes": "SVG logo with inverted variant"
+    },
+    "SvenskaSpelLogoLayered": {
+      "status": "complete",
+      "path": "components/logos/SvenskaSpelLogoLayered.tsx",
+      "docs": "components/logos/README.md",
+      "notes": "SVG logo with inverted variant"
+    },
+    "SvenskaSpelLogoVertical": {
+      "status": "complete",
+      "path": "components/logos/SvenskaSpelLogoVertical.tsx",
+      "docs": "components/logos/README.md",
+      "notes": "SVG logo with inverted variant"
+    },
+    "SvenskaSpelLogoHorizontal": {
+      "status": "complete",
+      "path": "components/logos/SvenskaSpelLogoHorizontal.tsx",
+      "docs": "components/logos/README.md",
+      "notes": "SVG logo with inverted variant"
+    },
+    "SvenskaSpelCube": {
+      "status": "complete",
+      "path": "components/logos/SvenskaSpelCube.tsx",
+      "docs": "components/logos/README.md",
+      "notes": "Vinnarkuben cube symbol"
+    }
+  },
+  "foundation": {
+    "colors": {
+      "status": "complete",
+      "path": "styles.css",
+      "docs": "../../guidelines/foundation/ColorSystem.md",
+      "notes": "All color tokens defined as CSS variables"
+    },
+    "typography": {
+      "status": "complete",
+      "path": "styles.css",
+      "docs": "../../guidelines/foundation/Typography.md",
+      "notes": "Typography tokens and classes defined"
+    },
+    "fonts": {
+      "status": "complete",
+      "path": "../styles/fonts.css",
+      "docs": "guidelines/FONT_LOADING_FIX.md",
+      "notes": "Svenska Spel Arena Pro and Plan Pro with data URI fix"
+    }
+  },
+  "scripts": {
+    "font-converter": {
+      "status": "complete",
+      "path": "scripts/convert-fonts-to-data-uri.js",
+      "docs": "scripts/README.md",
+      "notes": "Converts font files to data URIs"
+    }
+  }
+}

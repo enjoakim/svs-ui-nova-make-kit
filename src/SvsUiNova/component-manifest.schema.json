@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SvS UI Nova Component Manifest",
+  "description": "Manifest describing the status and location of all components in the Make Kit",
+  "type": "object",
+  "required": ["version", "name", "components"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "description": "Package version"
+    },
+    "name": {
+      "type": "string",
+      "description": "Package name"
+    },
+    "description": {
+      "type": "string"
+    },
+    "components": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/component"
+      }
+    },
+    "logos": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/component"
+      }
+    },
+    "foundation": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/component"
+      }
+    },
+    "scripts": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/component"
+      }
+    }
+  },
+  "definitions": {
+    "component": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["complete", "partial", "docs-only", "missing"],
+          "description": "Implementation status of the component"
+        },
+        "path": {
+          "type": ["string", "null"],
+          "description": "Relative path to the component implementation file"
+        },
+        "figmaConnect": {
+          "type": ["string", "null"],
+          "description": "Relative path to the Figma Code Connect file"
+        },
+        "docs": {
+          "type": ["string", "null"],
+          "description": "Relative path to the component documentation"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Additional notes about implementation status"
+        }
+      }
+    }
+  }
+}

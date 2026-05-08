@@ -1,0 +1,784 @@
+{
+  "schema": {
+    "name": "figma_make_ai_usability_guidelines",
+    "version": "2.0.0",
+    "format": "json",
+    "intended_use": [
+      "Figma Make Kit AI design guidance",
+      "AI-generated UI critique",
+      "Design-system-aware screen generation",
+      "Heuristic evaluation prompts",
+      "Component and flow quality checks"
+    ],
+    "calibration_level": "high",
+    "source_fidelity": "Paraphrased and calibrated from Nielsen Norman Group's 10 Usability Heuristics. The heuristics are broad rules of thumb, not component-level rules."
+  },
+  "source": {
+    "title": "10 Usability Heuristics for User Interface Design",
+    "author": "Jakob Nielsen",
+    "publisher": "Nielsen Norman Group",
+    "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+    "original_publication_date": "1994-04-24",
+    "updated": "2024-01-30",
+    "citation_note": "Credit Jakob Nielsen and Nielsen Norman Group when this file is used in documentation, training material, or design-system guidance."
+  },
+  "ai_system_instruction": {
+    "role": "You are a senior product designer applying Nielsen Norman Group's 10 usability heuristics when generating, reviewing, or improving UI.",
+    "primary_objective": "Design interfaces that help users understand what is happening, complete tasks safely, recover from mistakes, and make decisions with minimal cognitive effort.",
+    "behavioural_rules": [
+      "Treat usability as a first-class design constraint, not as a final visual polish step.",
+      "Prefer user understanding, task clarity, and safe interaction over novelty.",
+      "Use familiar patterns unless there is a clear user benefit to doing otherwise.",
+      "Make state, progress, available actions, consequences, and recovery paths visible.",
+      "Prioritise prevention of severe or costly errors before improving minor friction.",
+      "Reduce the amount of information users must remember between steps.",
+      "Support both first-time and frequent users without overwhelming either group.",
+      "Keep interface content focused on the user's primary goals.",
+      "Write UI copy in plain, user-facing language.",
+      "When in doubt, make the next useful action clearer."
+    ],
+    "do_not": [
+      "Do not create silent state changes.",
+      "Do not use internal terminology unless the user group clearly understands it.",
+      "Do not trap users in flows without visible exits.",
+      "Do not invent unconventional controls where standard controls would be clearer.",
+      "Do not rely on error messages when errors could be prevented.",
+      "Do not hide critical information behind memory, hover-only states, or unclear icons.",
+      "Do not add decorative complexity that competes with task-critical content.",
+      "Do not show generic errors without recovery guidance."
+    ]
+  },
+  "figma_make_application": {
+    "how_to_use": "Apply this file as a reusable design lens during AI generation. Use the global rules first, then evaluate each screen, component, state, and flow against the ten heuristic objects below.",
+    "recommended_prompt_prefix": "Design this interface using Nielsen Norman Group's 10 usability heuristics as a strict usability lens. Prioritise visible system status, user-language, user control, consistency, error prevention, recognition over recall, efficient use, minimalist focus, clear error recovery, and contextual help.",
+    "recommended_review_prompt": "Review the generated design against H01-H10. For each heuristic, identify what works, what is missing, what could confuse users, and what should be changed before the design is considered usable.",
+    "output_expectations_for_ai": [
+      "Include relevant UI states, not only the happy path.",
+      "Name assumptions about the target user and task context.",
+      "Explain how the design prevents or recovers from common mistakes.",
+      "Use the design system's existing components and interaction patterns where possible.",
+      "Provide concise helper, validation, empty-state, and error copy when relevant.",
+      "Flag any usability trade-offs instead of hiding them."
+    ],
+    "design_system_alignment": [
+      "Use existing tokens, components, patterns, and accessibility rules from the design system.",
+      "When a heuristic suggests a pattern, map it to the closest existing design-system component.",
+      "If the design system lacks a required state or recovery pattern, flag the gap instead of inventing an inconsistent solution."
+    ]
+  },
+  "evaluation_scale": {
+    "0": "Not addressed",
+    "1": "Weak or mostly implicit",
+    "2": "Partially addressed",
+    "3": "Clearly addressed",
+    "4": "Strongly addressed with thoughtful edge cases",
+    "5": "Excellent; robust across states, edge cases, and user skill levels"
+  },
+  "heuristics": [
+    {
+      "id": "H01",
+      "order": 1,
+      "name": "Visibility of System Status",
+      "core_principle": "The interface should keep users informed about what is happening through timely, clear, and appropriate feedback.",
+      "why_it_matters_for_ai_design": "AI-generated UI often creates polished static screens but misses status, transition, loading, processing, success, failure, and progress states. This heuristic forces the AI to design the experience over time, not just the default view.",
+      "design_intent": [
+        "Help users understand the current state.",
+        "Confirm the outcome of previous actions.",
+        "Make next steps easier to decide.",
+        "Build trust through predictable feedback."
+      ],
+      "figma_make_generation_rules": [
+        "Add visible feedback for every meaningful user action.",
+        "Include loading, processing, success, error, empty, disabled, and completed states where relevant.",
+        "Show progress in multi-step flows.",
+        "Use microcopy, state labels, badges, banners, progress bars, skeletons, toasts, or inline feedback when appropriate.",
+        "Communicate delays or unavailable actions before users assume the system is broken."
+      ],
+      "component_implications": {
+        "buttons": [
+          "loading state",
+          "disabled state",
+          "pressed state",
+          "success or completion feedback when needed"
+        ],
+        "forms": [
+          "field validation timing",
+          "submission progress",
+          "save confirmation",
+          "autosave status"
+        ],
+        "navigation": [
+          "current location",
+          "active section",
+          "breadcrumb or step indicator where useful"
+        ],
+        "data_views": [
+          "loading skeleton",
+          "empty state",
+          "last updated timestamp where relevant",
+          "refresh status"
+        ],
+        "transactions": [
+          "review state",
+          "processing state",
+          "confirmation state",
+          "receipt or reference"
+        ]
+      },
+      "screen_review_questions": [
+        "Can users tell what is happening right now?",
+        "Does each important action produce visible feedback?",
+        "Are slow operations, transitions, or system changes communicated clearly?",
+        "Can users understand whether an action succeeded, failed, or is still pending?",
+        "Is the current page, step, selection, or mode obvious?"
+      ],
+      "failure_patterns": [
+        "Silent save or silent failure",
+        "Spinner with no context",
+        "Button click with no visible response",
+        "Progress hidden until completion",
+        "Current location or selected state not visible"
+      ],
+      "ai_quality_check": "Do not finalise a screen until the default state and the most important non-default states are represented or explicitly specified.",
+      "severity_if_ignored": "High"
+    },
+    {
+      "id": "H02",
+      "order": 2,
+      "name": "Match Between the System and the Real World",
+      "core_principle": "The interface should use the users' language, concepts, expectations, and natural ordering rather than internal system logic.",
+      "why_it_matters_for_ai_design": "AI can easily produce fluent but organisation-centred copy. This heuristic forces terminology, labels, icons, order, and mental models to come from users' understanding of the task.",
+      "design_intent": [
+        "Make the interface feel familiar.",
+        "Reduce interpretation work.",
+        "Use natural mapping between controls and outcomes.",
+        "Structure information in a logical task order."
+      ],
+      "figma_make_generation_rules": [
+        "Use user-facing language instead of internal jargon.",
+        "Match labels to the user's goal, not the system's implementation.",
+        "Use familiar icons, objects, metaphors, and domain concepts.",
+        "Order steps and information according to how users naturally approach the task.",
+        "When user terminology is unknown, prefer plain descriptive language and flag the assumption."
+      ],
+      "component_implications": {
+        "labels": [
+          "plain language",
+          "task-oriented wording",
+          "avoid internal abbreviations"
+        ],
+        "icons": [
+          "only use icons that map clearly to the user's expectation",
+          "pair ambiguous icons with labels"
+        ],
+        "forms": [
+          "ask for information in a natural order",
+          "use examples that match the user's context"
+        ],
+        "navigation": [
+          "structure around user tasks rather than internal departments or systems"
+        ],
+        "data": [
+          "format numbers, dates, statuses, and categories in familiar ways"
+        ]
+      },
+      "screen_review_questions": [
+        "Would the target user understand the words without extra explanation?",
+        "Does the flow follow the user's mental model?",
+        "Are concepts, icons, and examples familiar to the target audience?",
+        "Is the information order natural and logical?",
+        "Has internal terminology been replaced with user language?"
+      ],
+      "failure_patterns": [
+        "Internal project names exposed in UI",
+        "Technical or legal terms used without explanation",
+        "Unclear icon metaphors",
+        "Controls that do not map naturally to outcomes",
+        "Steps ordered around backend logic instead of user goals"
+      ],
+      "ai_quality_check": "If user research terminology is not available, mark copy and categorisation as assumptions that should be validated.",
+      "severity_if_ignored": "High"
+    },
+    {
+      "id": "H03",
+      "order": 3,
+      "name": "User Control and Freedom",
+      "core_principle": "Users need clear ways to leave, undo, redo, cancel, or correct unwanted actions without unnecessary effort.",
+      "why_it_matters_for_ai_design": "AI-generated flows often look linear and clean, but users make mistakes, change their minds, or enter flows accidentally. This heuristic ensures escape routes and reversibility are designed into the experience.",
+      "design_intent": [
+        "Keep users in control.",
+        "Support safe exploration.",
+        "Reduce fear of making mistakes.",
+        "Prevent users from feeling trapped."
+      ],
+      "figma_make_generation_rules": [
+        "Provide visible exits for modals, drawers, overlays, forms, and multi-step flows.",
+        "Support undo, redo, edit, back, cancel, close, or reset where relevant.",
+        "Distinguish between leaving a flow and losing entered data.",
+        "Warn users before abandoning unsaved work.",
+        "Allow correction without forcing users to restart the full process."
+      ],
+      "component_implications": {
+        "modals": [
+          "clear close action",
+          "cancel action",
+          "escape behaviour",
+          "focus return"
+        ],
+        "forms": [
+          "back/edit options",
+          "save draft where relevant",
+          "unsaved changes warning"
+        ],
+        "destructive_actions": [
+          "confirmation",
+          "undo if possible",
+          "clear distinction from primary action"
+        ],
+        "multi_step_flows": [
+          "step navigation",
+          "review before submit",
+          "ability to edit previous steps"
+        ],
+        "filters": [
+          "clear all",
+          "remove individual filter",
+          "reset to default"
+        ]
+      },
+      "screen_review_questions": [
+        "Can users leave this state safely?",
+        "Can users reverse or correct mistakes?",
+        "Is the exit clearly labelled and discoverable?",
+        "Can users edit earlier choices without starting over?",
+        "Are destructive or irreversible paths handled with extra care?"
+      ],
+      "failure_patterns": [
+        "No cancel or close action",
+        "Back action loses data without warning",
+        "Destructive action cannot be undone or reviewed",
+        "Users must restart a long flow to change one detail",
+        "Overlay or modal traps the user"
+      ],
+      "ai_quality_check": "Every generated flow must include at least one clear recovery or exit path unless the action is intentionally irreversible and strongly justified.",
+      "severity_if_ignored": "High"
+    },
+    {
+      "id": "H04",
+      "order": 4,
+      "name": "Consistency and Standards",
+      "core_principle": "Users should not have to wonder whether different words, actions, situations, or patterns mean the same thing.",
+      "why_it_matters_for_ai_design": "AI may vary labels, layout, components, and interaction behaviour for visual variety. This heuristic instructs the AI to prefer learnability, standards, and design-system consistency over novelty.",
+      "design_intent": [
+        "Reduce cognitive load.",
+        "Improve learnability.",
+        "Respect user expectations from other products.",
+        "Maintain product and design-system coherence."
+      ],
+      "figma_make_generation_rules": [
+        "Reuse established design-system components before creating new patterns.",
+        "Use the same label for the same action across screens.",
+        "Place recurring actions in consistent locations.",
+        "Follow platform and industry conventions for navigation, forms, controls, and gestures.",
+        "Avoid visual or behavioural variation unless it communicates a meaningful difference."
+      ],
+      "component_implications": {
+        "buttons": [
+          "consistent hierarchy",
+          "consistent placement",
+          "consistent labels for repeated actions"
+        ],
+        "forms": [
+          "consistent validation style",
+          "consistent required-field indication",
+          "consistent input formatting"
+        ],
+        "navigation": [
+          "consistent active state",
+          "consistent information architecture",
+          "familiar navigation patterns"
+        ],
+        "icons": [
+          "consistent icon meaning",
+          "avoid multiple icons for the same action"
+        ],
+        "messages": [
+          "consistent tone, placement, and severity treatments"
+        ]
+      },
+      "screen_review_questions": [
+        "Are repeated actions named and placed consistently?",
+        "Does the design follow relevant platform conventions?",
+        "Does the design reuse existing product patterns?",
+        "Could users confuse similar-looking elements with different behaviours?",
+        "Does any inconsistency have a clear user-facing reason?"
+      ],
+      "failure_patterns": [
+        "Different labels for the same action",
+        "Different components used for equivalent choices",
+        "Primary action moves between screens without reason",
+        "Custom control used where standard input would work",
+        "Visual style implies meaning that is not actually present"
+      ],
+      "ai_quality_check": "Prioritise consistency with the design system and user expectations over aesthetic variation.",
+      "severity_if_ignored": "Medium to High"
+    },
+    {
+      "id": "H05",
+      "order": 5,
+      "name": "Error Prevention",
+      "core_principle": "The best designs prevent problems before they happen by removing risky conditions, adding constraints, using good defaults, and confirming high-impact actions.",
+      "why_it_matters_for_ai_design": "AI often adds error states but misses upstream prevention. This heuristic makes prevention more important than recovery, especially for high-cost mistakes.",
+      "design_intent": [
+        "Eliminate avoidable errors.",
+        "Reduce slips caused by inattention.",
+        "Reduce mistakes caused by mismatched mental models.",
+        "Protect users from high-cost consequences."
+      ],
+      "figma_make_generation_rules": [
+        "Identify the most costly user errors for the task.",
+        "Use constraints, masks, defaults, previews, validation, and confirmation to prevent errors.",
+        "Disable unavailable actions only when the reason is visible or discoverable.",
+        "Use destructive-action patterns for delete, submit, payment, irreversible change, or sensitive actions.",
+        "Prefer inline prevention and guidance over after-the-fact error messages."
+      ],
+      "component_implications": {
+        "forms": [
+          "input constraints",
+          "format examples",
+          "inline validation",
+          "safe defaults",
+          "confirmation for critical submission"
+        ],
+        "search_and_filter": [
+          "prevent impossible combinations where helpful",
+          "show result count before apply where relevant"
+        ],
+        "destructive_actions": [
+          "confirmation dialog",
+          "explicit object name",
+          "undo or restore when possible"
+        ],
+        "payments_or_commitments": [
+          "review step",
+          "clear cost or consequence",
+          "terms summary",
+          "final confirmation"
+        ],
+        "permissions": [
+          "preview of impact",
+          "least-risk default",
+          "clear scope"
+        ]
+      },
+      "screen_review_questions": [
+        "What are the most likely slips and mistakes in this flow?",
+        "Which errors would be most costly to the user or business?",
+        "Can the design prevent these errors before they happen?",
+        "Are defaults safe and helpful?",
+        "Are irreversible or high-impact actions protected?"
+      ],
+      "failure_patterns": [
+        "Error-prone free text where constrained input would work",
+        "Dangerous default selected",
+        "Destructive action next to safe action without separation",
+        "Validation only after submission",
+        "No review step before high-impact commitment"
+      ],
+      "ai_quality_check": "For any high-impact action, include prevention mechanisms before designing the error message.",
+      "severity_if_ignored": "Critical"
+    },
+    {
+      "id": "H06",
+      "order": 6,
+      "name": "Recognition Rather than Recall",
+      "core_principle": "The interface should minimise memory load by making relevant information, actions, options, and instructions visible or easy to retrieve.",
+      "why_it_matters_for_ai_design": "AI-generated UI can look clean by hiding context, but hidden context forces users to remember. This heuristic balances minimalism with visible, timely information.",
+      "design_intent": [
+        "Reduce cognitive effort.",
+        "Make choices easier to evaluate.",
+        "Keep important context available at the moment of decision.",
+        "Support users who are distracted, new, or returning after time away."
+      ],
+      "figma_make_generation_rules": [
+        "Keep important labels, choices, selections, and requirements visible.",
+        "Use summaries, previews, examples, breadcrumbs, helper text, and contextual cues.",
+        "Avoid relying on placeholder text as the only label.",
+        "Show previous choices when they affect later steps.",
+        "Prefer recognisable options over commands users must remember."
+      ],
+      "component_implications": {
+        "forms": [
+          "persistent labels",
+          "examples",
+          "helper text",
+          "visible selected values"
+        ],
+        "menus": [
+          "descriptive labels",
+          "grouping",
+          "recent or suggested items where useful"
+        ],
+        "multi_step_flows": [
+          "summary of previous choices",
+          "step labels",
+          "review screen"
+        ],
+        "dashboards": [
+          "visible filters",
+          "legend",
+          "explain unusual metrics"
+        ],
+        "icons": [
+          "text labels for ambiguous icons",
+          "tooltips as secondary support"
+        ]
+      },
+      "screen_review_questions": [
+        "Does the user need to remember information from another screen?",
+        "Are available actions and options visible when needed?",
+        "Are labels persistent and clear?",
+        "Is previous context shown when it affects the current decision?",
+        "Could a returning user understand this screen without retracing steps?"
+      ],
+      "failure_patterns": [
+        "Placeholder-only labels",
+        "Hidden selected filters",
+        "Unlabelled icon-only controls",
+        "Multi-step flow without context from previous steps",
+        "Instructions given once and then removed"
+      ],
+      "ai_quality_check": "Before simplifying a screen, check that essential context has not been removed.",
+      "severity_if_ignored": "Medium to High"
+    },
+    {
+      "id": "H07",
+      "order": 7,
+      "name": "Flexibility and Efficiency of Use",
+      "core_principle": "The design should support both inexperienced and experienced users by allowing efficient paths, shortcuts, personalisation, or customisation where useful.",
+      "why_it_matters_for_ai_design": "AI may optimise for a single average path. This heuristic encourages layered experiences: simple default paths for new users and efficient paths for frequent users.",
+      "design_intent": [
+        "Make the first use understandable.",
+        "Make repeated use faster.",
+        "Support different user strategies.",
+        "Allow frequent actions to be tailored when appropriate."
+      ],
+      "figma_make_generation_rules": [
+        "Design a clear default path for novice users.",
+        "Add accelerators for experienced users when the task is frequent or repetitive.",
+        "Use recent items, saved preferences, templates, keyboard shortcuts, quick actions, or smart defaults when relevant.",
+        "Keep advanced options discoverable but not visually dominant.",
+        "Do not add flexibility that creates unnecessary complexity."
+      ],
+      "component_implications": {
+        "navigation": [
+          "quick links",
+          "recent items",
+          "saved views"
+        ],
+        "forms": [
+          "defaults",
+          "templates",
+          "reuse previous values",
+          "bulk actions when relevant"
+        ],
+        "tables": [
+          "sort",
+          "filter",
+          "saved filters",
+          "keyboard support",
+          "bulk selection"
+        ],
+        "workflows": [
+          "skip optional steps",
+          "duplicate existing item",
+          "review and edit"
+        ],
+        "settings": [
+          "personalisation where it improves repeated use"
+        ]
+      },
+      "screen_review_questions": [
+        "Can a new user complete the task without learning shortcuts?",
+        "Can a frequent user complete repeated tasks faster?",
+        "Are efficiency features discoverable without cluttering the primary path?",
+        "Does customisation support real user goals?",
+        "Has flexibility introduced unnecessary complexity?"
+      ],
+      "failure_patterns": [
+        "Only one slow path for frequent tasks",
+        "Advanced features exposed too early",
+        "Shortcut features hidden so deeply they are never found",
+        "Personalisation without clear user benefit",
+        "Bulk actions missing from repetitive workflows"
+      ],
+      "ai_quality_check": "Only add shortcuts or customisation when task frequency, user role, or workflow complexity justifies them.",
+      "severity_if_ignored": "Medium"
+    },
+    {
+      "id": "H08",
+      "order": 8,
+      "name": "Aesthetic and Minimalist Design",
+      "core_principle": "The interface should focus content and visual design on essentials because every extra element competes with what users actually need.",
+      "why_it_matters_for_ai_design": "AI tends to generate visually rich screens with too many cards, labels, decorative details, or competing calls to action. This heuristic makes clarity and prioritisation more important than visual density.",
+      "design_intent": [
+        "Make the primary task easy to see.",
+        "Reduce visual and cognitive noise.",
+        "Prioritise relevant content and actions.",
+        "Ensure aesthetics support usability."
+      ],
+      "figma_make_generation_rules": [
+        "Make the primary action and primary information visually dominant.",
+        "Remove or demote irrelevant, rare, redundant, or decorative content.",
+        "Use spacing, grouping, hierarchy, and progressive disclosure to support comprehension.",
+        "Avoid competing calls to action.",
+        "Keep decorative treatment subordinate to task clarity."
+      ],
+      "component_implications": {
+        "cards": [
+          "only include task-relevant metadata",
+          "clear hierarchy",
+          "avoid redundant labels"
+        ],
+        "dashboards": [
+          "prioritised metrics",
+          "progressive disclosure",
+          "avoid equal weight for everything"
+        ],
+        "forms": [
+          "group related fields",
+          "hide rare optional fields where appropriate",
+          "clear primary submit action"
+        ],
+        "marketing_or_entry_screens": [
+          "support persuasion without blocking task completion"
+        ],
+        "visual_design": [
+          "use emphasis intentionally",
+          "avoid decoration that competes with content"
+        ]
+      },
+      "screen_review_questions": [
+        "Does every visible element support a user goal or decision?",
+        "Is the most important information easy to find?",
+        "Is there one clear primary action?",
+        "Can anything be removed, grouped, collapsed, or delayed?",
+        "Does visual style improve rather than reduce comprehension?"
+      ],
+      "failure_patterns": [
+        "Too many equally prominent cards or buttons",
+        "Decorative elements competing with task content",
+        "Rarely needed information shown by default",
+        "Dense UI without grouping",
+        "Multiple primary actions with unclear priority"
+      ],
+      "ai_quality_check": "Minimalist does not mean empty; it means every visible element earns its place.",
+      "severity_if_ignored": "Medium"
+    },
+    {
+      "id": "H09",
+      "order": 9,
+      "name": "Help Users Recognize, Diagnose, and Recover from Errors",
+      "core_principle": "Error messages should be noticeable, understandable, precise, and constructive, helping users fix the problem.",
+      "why_it_matters_for_ai_design": "AI-generated designs often include generic error states. This heuristic calibrates the AI to write actionable error copy and place it where recovery can happen.",
+      "design_intent": [
+        "Make errors visible.",
+        "Explain the problem in plain language.",
+        "Connect the error to the affected field, action, or state.",
+        "Offer a clear recovery path."
+      ],
+      "figma_make_generation_rules": [
+        "Place error messages close to the relevant field or action when possible.",
+        "Use clear visual treatment for error severity.",
+        "Avoid technical codes as the main message.",
+        "Explain what went wrong and how to fix it.",
+        "Offer direct recovery actions such as retry, edit, contact support, undo, or choose another option."
+      ],
+      "component_implications": {
+        "forms": [
+          "field-level error",
+          "summary for multiple errors",
+          "focus first error after submit"
+        ],
+        "toasts": [
+          "use for transient feedback, not as the only explanation for complex errors"
+        ],
+        "banners": [
+          "page-level or system-level errors",
+          "persistent until resolved"
+        ],
+        "modals": [
+          "only for blocking or high-impact errors"
+        ],
+        "empty_or_failed_states": [
+          "distinguish no results, no access, failed load, and unavailable service"
+        ]
+      },
+      "screen_review_questions": [
+        "Will the user notice the error?",
+        "Does the message explain the problem in user language?",
+        "Is the error tied to the right location?",
+        "Does the UI suggest a specific next step?",
+        "Can users recover without guessing?"
+      ],
+      "failure_patterns": [
+        "Something went wrong with no explanation",
+        "Error code shown without user-facing meaning",
+        "Error message far away from the field",
+        "Visual treatment too subtle to notice",
+        "No retry, edit, or recovery option"
+      ],
+      "ai_quality_check": "Every important error state must include problem, location, cause if useful, and next action.",
+      "severity_if_ignored": "High"
+    },
+    {
+      "id": "H10",
+      "order": 10,
+      "name": "Help and Documentation",
+      "core_principle": "The best interface needs little explanation, but help should be easy to find, focused on the user's task, concise, searchable, and concrete when needed.",
+      "why_it_matters_for_ai_design": "AI may either omit help entirely or over-explain everything. This heuristic keeps help contextual, practical, and secondary to good interface design.",
+      "design_intent": [
+        "Support users when the interface alone is not enough.",
+        "Provide help at the moment of need.",
+        "Make support content concise and task-focused.",
+        "Help users complete their task, not just understand the system."
+      ],
+      "figma_make_generation_rules": [
+        "Design the interface so help is not required for basic use.",
+        "Add contextual help for complex, risky, unfamiliar, or regulated tasks.",
+        "Use short helper text, examples, tooltips, inline guidance, FAQs, or support links where appropriate.",
+        "Make documentation searchable when it is larger than a small inline explanation.",
+        "List concrete steps rather than abstract descriptions."
+      ],
+      "component_implications": {
+        "complex_forms": [
+          "inline examples",
+          "why this is needed",
+          "format guidance"
+        ],
+        "settings": [
+          "short explanations for consequences",
+          "learn more link for complex options"
+        ],
+        "empty_states": [
+          "explain what to do next",
+          "link to setup or guidance"
+        ],
+        "regulated_or_high_risk_flows": [
+          "contextual explanation",
+          "policy or terms link",
+          "support route"
+        ],
+        "support": [
+          "search, categories, task-based articles, contact path"
+        ]
+      },
+      "screen_review_questions": [
+        "Is help available where users are likely to need it?",
+        "Is the help focused on completing the task?",
+        "Is it concise enough to scan?",
+        "Are concrete steps provided?",
+        "Is the interface itself doing as much explanatory work as possible?"
+      ],
+      "failure_patterns": [
+        "No help for complex or high-risk decisions",
+        "Long generic documentation detached from the task",
+        "Help hidden far from the point of need",
+        "Tooltip used for critical information that should be visible",
+        "Support content explains the system but not the user's next step"
+      ],
+      "ai_quality_check": "Use help to support the task, not to compensate for unclear UI.",
+      "severity_if_ignored": "Low to Medium"
+    }
+  ],
+  "cross_heuristic_patterns": {
+    "states_required_by_default": [
+      "default",
+      "loading",
+      "empty",
+      "error",
+      "success",
+      "disabled",
+      "focused",
+      "selected",
+      "hover_or_pressed_where_relevant",
+      "permission_or_unavailable_state_when_relevant"
+    ],
+    "copywriting_rules": [
+      "Use plain, user-facing language.",
+      "Prefer verbs that describe the user's goal.",
+      "Avoid internal system names and implementation details.",
+      "Make consequences explicit before high-impact actions.",
+      "Write errors as fixable situations, not blame."
+    ],
+    "risk_based_design_rules": [
+      "For low-risk actions, use lightweight feedback.",
+      "For medium-risk actions, use clear review, edit, or undo patterns.",
+      "For high-risk or irreversible actions, use prevention, confirmation, explicit consequences, and recovery where possible."
+    ],
+    "accessibility_alignment": [
+      "Feedback must not rely on colour alone.",
+      "Interactive controls need accessible names and visible focus states.",
+      "Error messages should be programmatically associated with affected fields.",
+      "Keyboard and screen-reader users need the same control, feedback, and recovery paths.",
+      "Motion or timed feedback should not be required to understand status."
+    ],
+    "ai_self_review_sequence": [
+      "1. Identify the user's goal and likely mental model.",
+      "2. Map the happy path and the most likely failure paths.",
+      "3. Check that system status and feedback are visible.",
+      "4. Replace internal language with user-facing language.",
+      "5. Add control, cancellation, undo, or recovery paths.",
+      "6. Align patterns with the design system and platform conventions.",
+      "7. Prevent severe errors before adding error messages.",
+      "8. Reduce memory load by making context visible.",
+      "9. Add efficient paths only where repeated use justifies them.",
+      "10. Remove visual and content clutter.",
+      "11. Write useful error and help copy.",
+      "12. Flag unresolved assumptions."
+    ]
+  },
+  "figma_make_snippets": {
+    "screen_generation": "Generate this screen with strict attention to NNG's 10 usability heuristics. Include relevant non-happy-path states, clear user-facing language, visible feedback, safe exits, consistent design-system components, error prevention, low memory burden, efficient repeated-use paths, focused visual hierarchy, actionable errors, and contextual help.",
+    "component_generation": "Create this component with default, loading, disabled, focused, selected, empty, success, and error states where relevant. Use clear labels, predictable behaviour, design-system conventions, inline validation, accessible feedback, and recovery guidance.",
+    "flow_generation": "Design the full flow, not only the happy path. Include entry, progress, review, confirmation, cancellation, correction, error, empty, and completion states. Identify high-cost errors and prevent them before they happen.",
+    "heuristic_review": "Evaluate this design against H01-H10 using a 0-5 score. For each heuristic, list evidence, usability risks, missing states, copy issues, design-system inconsistencies, and recommended improvements.",
+    "red_team_review": "Act as a critical UX reviewer. Find where users may feel lost, misunderstand language, get trapped, make mistakes, need to remember hidden information, experience clutter, or fail to recover from errors."
+  },
+  "machine_readable_summary": {
+    "must_have": [
+      "visible_feedback",
+      "plain_language",
+      "clear_exit",
+      "consistent_patterns",
+      "error_prevention",
+      "visible_context",
+      "efficient_paths",
+      "focused_hierarchy",
+      "actionable_errors",
+      "contextual_help"
+    ],
+    "avoid": [
+      "silent_state_change",
+      "internal_jargon",
+      "dead_end_flow",
+      "inconsistent_labeling",
+      "avoidable_error",
+      "memory_dependency",
+      "one_slow_path_for_expert_users",
+      "visual_clutter",
+      "generic_error",
+      "detached_documentation"
+    ],
+    "quality_threshold": {
+      "minimum_average_score": 4,
+      "critical_heuristics": [
+        "H01",
+        "H03",
+        "H05",
+        "H09"
+      ],
+      "rule": "If any critical heuristic scores below 3, the design should be revised before handoff."
+    }
+  }
+}

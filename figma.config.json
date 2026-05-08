@@ -1,0 +1,9 @@
+{
+  "codeConnect": {
+    "include": ["src/SvsUiNova/components/**/*.figma.tsx"],
+    "importPaths": {
+      "@/SvsUiNova/components": "./src/SvsUiNova/components"
+    },
+    "documentUrlSubstitutions": {}
+  }
+}
