@@ -56,6 +56,38 @@ critical UI text should stay calm, stable, and easy to scan.
 
 ---
 
+## Connected Tokens and Utilities
+
+This guidance now maps directly to the current codebase through the shared
+typography tokens in [src/SvsUiNova/styles.css](../../src/SvsUiNova/styles.css)
+and the global theme variables in [src/styles/theme.css](../../src/styles/theme.css).
+
+Primary token groups:
+
+- raw size tokens: `--font-size/text-s`, `--font-size/text-base`, `--font-size/text-xl`, `--font-size/text-2xl`
+- semantic type tokens: `--heading/xs`, `--heading/s`, `--heading/m`, `--body/s`, `--body/m`
+- line-height tokens: `--line-height/leading-5`, `--line-height/leading-6`, `--line-height/leading-7`, `--line-height/leading-8`
+
+Adaptive utility classes:
+
+- `svs-cq-inline` - enables container-aware sizing on the component root
+- `svs-adaptive-card-title` - adaptive title sizing for card-width contexts
+- `svs-adaptive-surface-title` - adaptive title sizing for surfaces such as dialogs and sheets
+- `svs-adaptive-body-text` - stable supporting copy with controlled min/max bounds
+- `svs-adaptive-body-text-strong` - stable supporting copy for labels and stronger body emphasis
+
+## Current Component Mapping
+
+The first connected components in the repo are:
+
+- `CardTitle` and `CardDescription` in `src/SvsUiNova/components/Card.tsx`
+- `BottomSheet` title and description in `src/SvsUiNova/components/BottomSheet.tsx`
+- `Dialog` title, description, and scrollable label text in `src/SvsUiNova/components/Dialog.tsx`
+
+These components now use container-aware typography instead of relying only on
+fixed text sizes. That gives us a concrete bridge between the foundation
+guideline and the actual design-system implementation.
+
 ## Practical Rules
 
 - Prefer container-aware scaling over viewport-only scaling for reusable UI.

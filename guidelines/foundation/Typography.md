@@ -102,6 +102,35 @@ The design system uses a structured scale based on specific sizes that create cl
 
 ---
 
+## Adaptive Mapping in the Codebase
+
+The design system now connects adaptive typography guidance to concrete tokens
+and components.
+
+Current mapping:
+
+- `--heading/xs` to `--heading/m` drive adaptive surface and card titles
+- `--body/s` to `--body/m` drive adaptive supporting and critical text
+- `--line-height/leading-5` to `--line-height/leading-8` provide controlled
+  vertical rhythm as containers grow
+
+Current adaptive utility classes live in `src/SvsUiNova/styles.css`:
+
+- `svs-cq-inline`
+- `svs-adaptive-card-title`
+- `svs-adaptive-surface-title`
+- `svs-adaptive-body-text`
+- `svs-adaptive-body-text-strong`
+
+Current component usage:
+
+- `CardTitle` and `CardDescription`
+- `BottomSheet` title and description
+- `Dialog` title, description, and supporting label text
+
+Use this pattern when a component is reused in multiple widths and the
+available space matters more than the viewport breakpoint.
+
 ## Semantic Typography
 
 ### Heading Levels

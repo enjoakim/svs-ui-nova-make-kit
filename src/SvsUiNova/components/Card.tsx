@@ -13,7 +13,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={clsx(
-          'bg-card text-card-foreground rounded-lg',
+          'bg-card text-card-foreground rounded-lg svs-cq-inline',
           'font-["Svenska_Spel_Plan_Pro",sans-serif]',
 
           // Variant styles
@@ -54,12 +54,8 @@ export const CardTitle = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadi
   ({ className, style, ...props }, ref) => (
     <h3
       ref={ref}
-      className={clsx('leading-none tracking-tight', className)}
-      style={{
-        fontFamily: 'var(--font-family/plan-pro)',
-        fontWeight: 500,
-        ...style
-      }}
+      className={clsx('svs-adaptive-card-title tracking-tight', className)}
+      style={style}
       {...props}
     />
   )
@@ -71,7 +67,7 @@ export const CardDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<H
   ({ className, ...props }, ref) => (
     <p
       ref={ref}
-      className={clsx('text-sm text-muted-foreground', className)}
+      className={clsx('svs-adaptive-body-text text-muted-foreground', className)}
       {...props}
     />
   )

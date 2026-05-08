@@ -258,6 +258,39 @@
   --content\/caption: var(--font-size\/text-xs);
 }
 
+/* Adaptive typography utilities */
+.svs-cq-inline {
+  container-type: inline-size;
+}
+
+.svs-adaptive-card-title {
+  font-family: var(--font-plan-pro);
+  font-size: clamp(calc(var(--heading\/xs) * 1px), 4.5cqi, calc(var(--heading\/s) * 1px));
+  font-weight: 500;
+  line-height: clamp(calc(var(--line-height\/leading-6) * 1px), 5cqi, calc(var(--line-height\/leading-7) * 1px));
+}
+
+.svs-adaptive-surface-title {
+  font-family: var(--font-plan-pro);
+  font-size: clamp(calc(var(--heading\/s) * 1px), 4cqi, calc(var(--heading\/m) * 1px));
+  font-weight: 500;
+  line-height: clamp(calc(var(--line-height\/leading-7) * 1px), 5cqi, calc(var(--line-height\/leading-8) * 1px));
+}
+
+.svs-adaptive-body-text {
+  font-family: var(--font-plan-pro);
+  font-size: clamp(calc(var(--body\/s) * 1px), 2.5cqi, calc(var(--body\/m) * 1px));
+  font-weight: 400;
+  line-height: clamp(calc(var(--line-height\/leading-5) * 1px), 3cqi, calc(var(--line-height\/leading-6) * 1px));
+}
+
+.svs-adaptive-body-text-strong {
+  font-family: var(--font-plan-pro);
+  font-size: clamp(calc(var(--body\/s) * 1px), 2.5cqi, calc(var(--body\/m) * 1px));
+  font-weight: 500;
+  line-height: clamp(calc(var(--line-height\/leading-5) * 1px), 3cqi, calc(var(--line-height\/leading-6) * 1px));
+}
+
 /* About svs-compact-hero-title-display: Titles in Hero */
 .svs-compact-hero-title-display {
   font-family: "Svenska Spel Arena Pro";

@@ -57,7 +57,7 @@ export const BottomSheet = forwardRef<HTMLDivElement, BottomSheetProps>(
           ref={ref}
           className={clsx(
             'absolute bottom-0 left-0 right-0',
-            'bg-card rounded-t-2xl shadow-lg',
+            'bg-card rounded-t-2xl shadow-lg svs-cq-inline',
             'font-["Svenska_Spel_Plan_Pro",sans-serif]',
             'animate-in slide-in-from-bottom duration-300',
 
@@ -82,11 +82,11 @@ export const BottomSheet = forwardRef<HTMLDivElement, BottomSheetProps>(
           <div className="px-6 pb-4 border-b border-[rgba(40,3,1,0.16)] flex-shrink-0">
             <div className="flex items-start justify-between">
               <div className="flex-1">
-                <h2 className="text-[20px] leading-[28px]  text-foreground">
+                <h2 className="svs-adaptive-surface-title text-foreground">
                   {title}
                 </h2>
                 {description && (
-                  <p className="mt-1 text-[14px] leading-[20px] font-normal text-muted-foreground">
+                  <p className="svs-adaptive-body-text mt-1 text-muted-foreground">
                     {description}
                   </p>
                 )}

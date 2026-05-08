@@ -60,7 +60,7 @@ export const Dialog = forwardRef<HTMLDivElement, DialogProps>(
           aria-labelledby="dialog-title"
           aria-describedby={description ? 'dialog-description' : undefined}
           className={clsx(
-            'relative bg-white rounded-[8px]',
+            'relative bg-white rounded-[8px] svs-cq-inline',
             'flex flex-col gap-[24px] p-[24px]',
 
             // Width constraints
@@ -103,13 +103,9 @@ export const Dialog = forwardRef<HTMLDivElement, DialogProps>(
                 <h2
                   id="dialog-title"
                   className={clsx(
-                    "text-[20px] leading-[28px] text-[#1b1918] w-full shrink-0",
+                    "svs-adaptive-surface-title text-[#1b1918] w-full shrink-0",
                     mobile && 'text-center min-w-full w-[min-content]'
                   )}
-                  style={{
-                    fontFamily: 'var(--font-family/plan-pro)',
-                    fontWeight: 500
-                  }}
                 >
                   {title}
                 </h2>
@@ -119,7 +115,7 @@ export const Dialog = forwardRef<HTMLDivElement, DialogProps>(
                 <p
                   id="dialog-description"
                   className={clsx(
-                    "font-['Svenska_Spel_Plan_Pro',sans-serif] font-normal text-[14px] leading-[20px] text-[rgba(0,0,0,0.7)] w-full shrink-0",
+                    "svs-adaptive-body-text text-[rgba(0,0,0,0.7)] w-full shrink-0",
                     mobile && 'overflow-clip'
                   )}
                 >
@@ -132,15 +128,11 @@ export const Dialog = forwardRef<HTMLDivElement, DialogProps>(
                   <div className="size-full overflow-x-clip overflow-y-auto">
                     <div className="p-[16px] flex flex-col gap-[16px] items-start size-full">
                       <p
-                        className="text-[14px] leading-[20px] text-[#1b1918] w-full shrink-0"
-                        style={{
-                          fontFamily: 'var(--font-family/plan-pro)',
-                          fontWeight: 500
-                        }}
+                        className="svs-adaptive-body-text-strong text-[#1b1918] w-full shrink-0"
                       >
                         Tags
                       </p>
-                      <p className="font-['Svenska_Spel_Plan_Pro',sans-serif] font-normal text-[14px] leading-[20px] text-[rgba(0,0,0,0.7)] w-full shrink-0">
+                      <p className="svs-adaptive-body-text text-[rgba(0,0,0,0.7)] w-full shrink-0">
                         {description}
                       </p>
 
