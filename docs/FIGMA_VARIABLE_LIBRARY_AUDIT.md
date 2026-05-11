@@ -12,6 +12,9 @@ Source exports reviewed:
   Soc, Stryktipset, Topptipset, Triss, Tur, Vikinglotto, VM-Tipset,
   and Wireframe.
 
+Source archive location:
+- [`docs/figma-variable-exports/README.md`](./figma-variable-exports/README.md)
+
 ## Executive Summary
 
 The variable library architecture is strong and highly consistent.
@@ -250,7 +253,9 @@ The highest-value cleanup items are:
 
 ## Recommended Next Step
 
-Create a normalization checklist for the semantic layer with three categories:
+Use the normalization checklist in
+[`docs/figma-variable-exports/README.md`](./figma-variable-exports/README.md)
+to classify semantic-layer cleanup findings into three categories:
 - `confirmed intentional`
 - `needs semantic rename`
 - `needs alias/source fix`

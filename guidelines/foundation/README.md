@@ -12,6 +12,7 @@ Foundation documentation covers fundamental concepts like accessibility, color s
 - [Design Principles](./DesignPrinciples.md) - Core design principles that guide all product decisions
 - [Accessibility](./Accessibility.md) - Accessibility guidelines and principles for inclusive design that works for all users
 - [Color System](./ColorSystem.md) - Comprehensive color system with semantic tokens, themes, and modes
+- [Color Token Architecture](./ColorTokenArchitecture.md) - Figma collection model, semantic grouping, and product theming architecture
 - [Typography](./Typography.md) - Typography system with typefaces, scales, and usage guidelines
 - [Adaptive Typography & Responsive Expression](./AdaptiveTypographyResponsiveExpression.md) - Container-aware guidance for fluid type and selected visual scaling
 - [Iconography](./Iconography.md) - Icon system with simple icons, pictograms, and illustrations

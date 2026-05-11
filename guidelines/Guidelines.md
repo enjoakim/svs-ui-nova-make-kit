@@ -31,6 +31,7 @@ Core design system principles and foundational systems:
 - [Design Principles](./foundation/DesignPrinciples.md) - Core design principles guiding all product decisions
 - [Accessibility](./foundation/Accessibility.md) - Accessibility guidelines and principles for inclusive design
 - [Color System](./foundation/ColorSystem.md) - Comprehensive color system with semantic tokens and modes
+- [Color Token Architecture](./foundation/ColorTokenArchitecture.md) - Figma collection model, semantic groups, and parent-to-product theme mapping
 - [Typography](./foundation/Typography.md) - Typography system with typefaces, scales, and usage guidelines
 - [Adaptive Typography & Responsive Expression](./foundation/AdaptiveTypographyResponsiveExpression.md) - Container-aware scaling for type and selected visual elements
 - [Iconography](./foundation/Iconography.md) - Icon system with simple icons, pictograms, and illustrations

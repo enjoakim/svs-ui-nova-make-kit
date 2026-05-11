@@ -1,144 +1,218 @@
 # Color System
 
-The Svenska Spel design system uses a comprehensive color system built on semantic tokens, supporting both light and dark modes with consistent surfaces, contrasts, and accessibility standards.
+The Svenska Spel design system uses a semantic color system that translates
+brand expression into consistent UI behavior across products, themes, and
+modes.
 
 ---
 
 ## Introduction
 
-The color system provides a structured approach to color usage across all digital products. It's built on design tokens that adapt to different themes and modes while maintaining visual consistency and accessibility.
+The color system is not a flat palette. It is a mapping model.
+
+Product and brand colors are first translated into a functional palette, then
+mapped into semantic tokens, and finally consumed by components and states.
+This keeps the system expressive for each product while still giving teams a
+stable structure to design and build against.
 
 **Core Principles:**
 - Semantic naming for clear intent
-- Theme and mode support (light/dark)
+- Product expression through mapping, not hard-coded component color choices
+- Structural surfaces and layers, not only accent colors
+- Stateful tokens for interactive behavior
+- Parent theme plus product-specific extensions
 - Accessible contrast ratios
-- Consistent surface hierarchy
-- Scalable and maintainable
+- Scalable, governable architecture
 
 ---
 
 ## Architecture of the Color System
 
-The color system is organized in layers from primitive values to semantic tokens:
+The system follows a four-step logic:
+
+1. **Products & brands**
+2. **Functional color mapping**
+3. **Semantic token groups**
+4. **Component and state usage**
+
+This is implemented in Figma through a parent-and-extension collection model:
 
 ### 1. Primitive Colors
-Raw color values (HEX, RGB) that form the foundation of the system.
+
+Concrete product-oriented color families such as `Svs/Core/*`, `Bingo/Core/*`,
+or `Poker/Amber/*`.
+
+These are the raw ingredients for theming, not the values components should
+consume directly.
 
 ### 2. Token Layer
-Semantic tokens that reference primitive colors and provide meaning.
+
+Semantic tokens that describe UI roles such as:
+
+- `Accent`
+- `Status`
+- `Surface`
+- `Surface Inverted`
+- `Layer`
+- `Layer Inverted`
+- `Stroke`
+- `Components`
+
+This is the operational layer of the color system.
 
 ### 3. Component Tokens
 Component-specific tokens that reference semantic tokens.
 
-### 4. Theme Layer
-Theme variations (compact, relaxed) that modify token values.
+### 4. Theme and Mode Layer
 
-### 5. Mode Layer
-Light and dark mode adaptations.
+The `Svenska Spel` collection acts as the parent semantic theme. Product theme
+collections such as `Bingo`, `Casino`, or `Keno` reuse the same semantic
+structure and override selected mappings into product-specific primitives.
+
+The same semantic system is then expressed through four modes:
+
+- `Light`
+- `Light Secondary`
+- `Dark`
+- `Vibrant`
+
+For a fuller breakdown of the Figma collection model and alias flow, see
+[ColorTokenArchitecture.md](./ColorTokenArchitecture.md).
 
 ---
 
-## Themes
+## Themes and Modes
 
-The design system supports two theme variants that affect spacing, sizing, and color application:
+The design system uses **product themes** and **visual modes**.
 
-### Compact Theme
+### Product Themes
+
+Product themes determine how a product's brand expression is mapped into the
+shared semantic color structure.
+
+Examples:
+- `Svenska Spel`
+- `Bingo`
+- `Casino`
+- `Oddset`
+- `Triss`
+
+Each product keeps the same semantic model, but can override selected mappings
+to create a distinct visual expression.
+
+### Visual Modes
+
+Modes change how the semantic system is expressed without changing the
+underlying semantic roles.
+
+Supported modes:
+- `Light`
+- `Light Secondary`
+- `Dark`
+- `Vibrant`
+
+This means a token such as `Surface`, `Layer`, or `Accent Primary` keeps its
+job even when the rendered color value changes.
+
+### Compact and Relaxed UI Density
+
+Compact and relaxed should be understood as **UI density patterns**, not as the
+main color architecture.
+
+#### Compact
 - Tighter spacing and smaller components
 - Higher information density
 - Suitable for data-heavy interfaces
 - Desktop-optimized experiences
 
-### Relaxed Theme
+#### Relaxed
 - More generous spacing
 - Larger touch targets
 - Better readability
 - Mobile-first experiences
 
-**Note:** Color tokens remain consistent across themes, but their application context may vary.
+**Note:** Color tokens remain semantically consistent across density patterns.
+
+---
+
+## Structural Surfaces and Layers
+
+The system uses color to build structure, not only brand emphasis.
+
+One of the key distinctions is between **Surface** and **Layer**:
+
+- `Surface` establishes the main visual planes of the interface
+- `Layer` introduces contained structure on top of those planes
+- foreground tokens are paired with the structural context they sit on
+
+This creates a readable stacking model:
+
+1. base
+2. surface
+3. layer
+4. foreground
+5. accent or action
+
+### Surface Hierarchy
+
+Surfaces create depth and hierarchy through layered backgrounds.
+
+Typical roles include:
+
+- `base`
+- `standard`
+- `elevated`
+- inverted equivalents where needed
+
+Foreground pairs commonly include:
+
+- `surface-fg`
+- `surface-fg-muted`
+- `inverted-surface-fg`
+- `inverted-surface-fg-muted`
+
+### Layer Hierarchy
+
+Layers sit on top of surfaces and provide structured contrast.
+
+Typical roles include:
+
+- `neutral`
+- `contrast-on-base`
+- `contrast-on-surface`
+
+Foreground pairs commonly include:
+
+- `layers-fg`
+- `layers-fg-muted`
+
+This structure is especially useful in dense interfaces where hierarchy needs
+to remain clear across products and modes.
 
 ---
 
 ## Modes
 
-### Light Mode
+### Light
 - Default mode for most experiences
 - High contrast with dark text on light backgrounds
 - Optimized for well-lit environments
 - Better for reading-heavy content
 
-**Base Surface:**
-- Background: `#FFFFFF` (White) or `#FAF6F3` (Beige Light)
-- Text: `#1B1918` (Black)
-- High contrast for readability
+### Light Secondary
+- Secondary light expression within the same semantic model
+- Useful when product tone needs to soften or shift while staying light-based
+- Keeps the same semantic relationships as Light
 
----
-
-### Dark Mode
+### Dark
 - Reduced eye strain in low-light environments
-- Lower contrast with light text on dark backgrounds
-- Energy efficient on OLED displays
-- Modern aesthetic
+- Light foregrounds on dark structural layers
+- Preserves semantic hierarchy with inverted visual balance
 
-**Base Surface:**
-- Background: `#1B1918` (Black)
-- Text: `#FFFFFF` (White)
-- Adjusted contrast for comfort
-
----
-
-## Surface and Contrast
-
-### Surface Hierarchy
-
-Surfaces create depth and hierarchy in the interface through layered backgrounds:
-
-**Level 0 - Base Surface:**
-- The foundation layer
-- Light mode: `#FFFFFF` or `#FAF6F3`
-- Dark mode: `#1B1918`
-- Used for: Page backgrounds
-
-**Level 1 - Elevated Surface:**
-- Cards and containers
-- Light mode: `#FAF6F3` or `#E5DFDA`
-- Dark mode: Lighter than base (subtle variation)
-- Used for: Cards, panels, modals
-
-**Level 2 - Higher Elevation:**
-- Dialogs and overlays
-- Light mode: `#FFFFFF`
-- Dark mode: Further lightened
-- Used for: Floating elements, tooltips
-
-**Level 3 - Highest Elevation:**
-- Top-most elements
-- Light mode: `#FFFFFF`
-- Dark mode: Maximum lightness variation
-- Used for: Dropdowns, menus
-
----
-
-### Contrast Levels
-
-The system defines contrast tokens for text and UI elements:
-
-**Primary Contrast:**
-- Highest contrast for primary content
-- Light mode: `#1B1918` (Black)
-- Dark mode: `#FFFFFF` (White)
-- Used for: Headings, body text, important content
-
-**Secondary Contrast:**
-- Medium contrast for supporting content
-- Light mode: `rgba(27, 25, 24, 0.7)` (70% opacity)
-- Dark mode: `rgba(255, 255, 255, 0.7)`
-- Used for: Helper text, labels, secondary information
-
-**Tertiary Contrast:**
-- Low contrast for subtle elements
-- Light mode: `rgba(27, 25, 24, 0.4)` (40% opacity)
-- Dark mode: `rgba(255, 255, 255, 0.4)`
-- Used for: Placeholders, disabled states, dividers
+### Vibrant
+- Higher brand expression and stronger accent presence
+- Commonly introduces more product-specific overrides
+- Still relies on the same semantic token contract
 
 ---
 
@@ -146,78 +220,83 @@ The system defines contrast tokens for text and UI elements:
 
 ### Accent Colors
 
-**Primary Accent:**
-- Token: `--color/accent/primary/bg/rest`
-- Value: `#ED0000` (Svenska Spel Red)
-- Usage: Primary CTAs, brand moments, key actions
-- States: rest, hover, active, disabled
+Accent tokens handle product expression, primary actions, and high-emphasis UI
+moments.
 
-**Secondary Accent:**
-- Token: `--color/accent/secondary/bg/rest`
-- Value: `#A20020` (Dark Red 1)
-- Usage: Secondary actions, hover states
-- States: rest, hover, active, disabled
+Common roles include:
+- primary
+- primary fg
+- primary variant
+- secondary
+- tertiary variants where needed
+
+Accent tokens are usually stateful.
+
+Typical states:
+- rest
+- hover
+- pressed
+- selected
+
+**Example usage:**
+- primary CTAs
+- selected states
+- brand-signature moments
+- high-priority interactive emphasis
 
 ---
 
 ### Status Colors
 
-**Success:**
-- Token: `--color/status/success/bg`
-- Value: `#00823D` (Green)
-- Usage: Success messages, confirmations, positive states
+Status tokens communicate meaning, not branding.
 
-**Warning:**
-- Token: `--color/status/warning/bg`
-- Value: Orange/Yellow tones
-- Usage: Warning messages, caution states
+Typical roles:
+- success
+- warning
+- error
+- info
 
-**Error:**
-- Token: `--color/status/error/bg`
-- Value: `#ED0000` (Red)
-- Usage: Error messages, validation failures, destructive actions
-
-**Info:**
-- Token: `--color/status/info/bg`
-- Value: `#0071DB` (Blue)
-- Usage: Informational messages, neutral notifications
+Use them for:
+- confirmation and completion
+- caution
+- validation failures
+- neutral guidance and messaging
 
 ---
 
 ### Surface Colors
 
-**Base Surface:**
-- Token: `--color/surface/base/bg/rest`
-- Light: `#FFFFFF` or `#FAF6F3`
-- Dark: `#1B1918`
-- Usage: Page background, foundation layer
+Surface tokens define the main visual planes of the UI.
 
-**Elevated Surface:**
-- Token: `--color/surface/elevated/bg/rest`
-- Light: `#FAF6F3` or `#E5DFDA`
-- Dark: Subtle lighter variation
-- Usage: Cards, containers, panels
+Use them for:
+- page backgrounds
+- cards and panels
+- elevated containers
+- inverted contexts
 
-**Overlay:**
-- Token: `--color/surface/overlay/bg`
-- Value: `rgba(27, 25, 24, 0.5)` (50% opacity)
-- Usage: Modal backdrops, scrim layers
+---
+
+### Layer Colors
+
+Layer tokens define contained elements that sit on top of surfaces.
+
+Use them for:
+- grouped content areas
+- emphasis blocks
+- contrast containers
+- overlays and structured clusters
 
 ---
 
 ### Stroke Colors
 
-**Default Stroke:**
-- Token: `--color/stroke/default`
-- Light: `#E5DFDA`
-- Dark: Subtle lighter variation
-- Usage: Borders, dividers, outlines
+Stroke tokens define structural boundaries.
 
-**Strong Stroke:**
-- Token: `--color/stroke/strong`
-- Light: `#1B1918`
-- Dark: `#FFFFFF`
-- Usage: Emphasized borders, focus rings
+Use them for:
+- borders
+- dividers
+- outlines
+- stronger emphasis edges and focus-adjacent structure
 
 **Subtle Stroke:**
 - Token: `--color/stroke/subtle`
