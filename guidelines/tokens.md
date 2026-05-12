@@ -1,14 +1,63 @@
-**Add your own guidelines here**
-<!--
+# Token Usage Guidelines
 
-Token guidelines teach Make what tokens are available and how to use them correctly.
+This file explains how token sources are organized in the repository and how to
+choose the right layer when designing or implementing UI.
 
-Create a file for each token type. In each file, cover:
-* Naming pattern — How token names are structured so Make can find tokens independently
-* Semantic purpose — What each token group means (success, neutral, etc.)
-* Usage frequency — How often each value is used, so the agent knows which are defaults vs. edge cases
-* Decision tree — A quick lookup the agent can follow to pick the right token
-* Examples — Correct and incorrect usage, especially for common mistakes
+## Source Order
 
-For more tips, check our guide:
-https://developers.figma.com/docs/code/write-design-system-guidelines
+Use token layers in this order:
+
+1. semantic theme tokens
+2. product theme tokens
+3. primitive tokens
+4. raw color values only as a last resort
+
+In repo terms, that means:
+
+1. `src/design-tokens/themes/`
+2. `src/design-tokens/products/`
+3. `src/design-tokens/primitives/`
+4. never default to hardcoded hex or rgba values in curated components
+
+## Folder Roles
+
+- `src/design-tokens/globals/`: shared cross-product token sources
+- `src/design-tokens/primitives/`: split primitive color payloads by product or group
+- `src/design-tokens/themes/svenska-spel/`: parent semantic theme modes
+- `src/design-tokens/products/<product>/`: product-specific theme modes
+- `src/imports/`: raw migration input from Figma, not the preferred long-term API
+
+## Naming Rules
+
+- Use lowercase kebab-case for token folders and exported token files.
+- Keep theme mode files normalized to:
+  - `light.tokens.json`
+  - `light-secondary.tokens.json`
+  - `dark.tokens.json`
+  - `vibrant.tokens.json`
+- Preserve product slugs consistently across docs, folder names, and imports.
+
+## Decision Rules
+
+- If the UI role is semantic, choose a theme token first.
+- If the UI needs a product-specific expression, choose the matching product theme token.
+- If the work is token-authoring or token-audit work, trace back to primitives and globals.
+- If a component needs a one-off hardcoded value, treat that as a cleanup candidate and document why.
+
+## Correct Usage
+
+- Use semantic roles such as accent, surface, layer, stroke, and status.
+- Keep product switching at the theme layer instead of changing component logic.
+- Prefer normalized token files under `src/design-tokens` over ad hoc imports from `src/imports`.
+
+## Avoid
+
+- importing raw generated token files directly into curated component source when a normalized equivalent exists
+- introducing new hardcoded colors in Make-facing components
+- inventing product-specific token names that break the shared folder structure
+
+## Related Docs
+
+- [Color System](./foundation/ColorSystem.md)
+- [Color Token Architecture](./foundation/ColorTokenArchitecture.md)
+- [src/design-tokens/README.md](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/src/design-tokens/README.md)

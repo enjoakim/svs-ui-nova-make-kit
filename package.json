@@ -1,6 +1,6 @@
 {
   "name": "@make-kits/svs-ui-nova",
-  "version": "0.1.7",
+  "version": "0.2.1",
   "type": "module",
   "scripts": {
     "build": "vite build",

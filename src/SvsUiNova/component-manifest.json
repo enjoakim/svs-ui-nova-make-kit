@@ -1,6 +1,6 @@
 {
   "$schema": "./component-manifest.schema.json",
-  "version": "0.1.3",
+  "version": "0.2.1",
   "name": "@make-kits/svs-ui-nova",
   "description": "Svenska Spel UI (Nova) Design System - Make Kit Component Manifest",
   "components": {

@@ -19,6 +19,7 @@ Imported source includes:
 - App shell files: `App.tsx`, `ComponentDemo.tsx`, `AllComponentsDemo.tsx`
 - Style files: `index.css`, `fonts.css`, `globals.css`, `tailwind.css`, `theme.css`
 - DS package files under `src/SvsUiNova`
+- token structure under `src/design-tokens`
 - Root scripts under `scripts`
 - Guidelines under both `guidelines` and `src/SvsUiNova/guidelines`
 - Review-framework files under `guidelines`, including:
@@ -27,6 +28,14 @@ Imported source includes:
   - `COLOR_60_30_10_RULE.md` and `color-60-30-10-rule.json`
 - Generated imports under `src/imports`
 - A generated token artifact: `src/imports/Mode_1.tokens.json`
+
+The repo is no longer just a placeholder import target. It now acts as a
+working bridge between:
+
+- the Figma design system
+- the Figma Make Kit source tree
+- Codex-assisted implementation workflows
+- shared design and UX guidance
 
 ## Metadata Coverage
 
@@ -54,6 +63,8 @@ components should be Make-exposed, and tighten the manifest.
   - `src/SvsUiNova/component-manifest.json`
 - Figma Code Connect config already exists:
   - `figma.config.json`
+- A canonical design-token landing zone now exists:
+  - `src/design-tokens`
 - A substantial DS component surface is already implemented in source
 - The repo now versions both human-readable and machine-readable design review
   guidance, which gives the Make Kit a clearer shared quality baseline
@@ -81,6 +92,7 @@ components should be Make-exposed, and tighten the manifest.
 ## Recommended Next Steps
 
 1. Reconcile the TypeScript manifest with the imported JSON manifest and actual files.
-2. Decide whether `Skeleton` and `Spinner` belong in the public Make surface.
-3. Replace the remaining direct imports from `src/imports` with curated wrappers where possible.
-4. Normalize hardcoded design values toward the canonical token layer.
+2. Make `src/design-tokens` the documented source for normalized token structure.
+3. Decide whether `Skeleton` and `Spinner` belong in the public Make surface.
+4. Replace the remaining direct imports from `src/imports` with curated wrappers where possible.
+5. Normalize hardcoded design values toward the canonical token layer.

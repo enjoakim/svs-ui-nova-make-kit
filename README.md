@@ -1,46 +1,59 @@
 # SvS UI Nova Make Kit
 
-Repository for connecting the Svenska Spel `SvS UI (nova)` design system to a Figma Make Kit.
+Repository for connecting the Svenska Spel `SvS UI (nova)` design system to:
+
+- Figma Make
+- Codex and Figma-assisted workflows
+- design-system documentation and review guidance
+- theme-aware product implementation across the Svenska Spel portfolio
 
 ## Purpose
 
-This repo is the source-of-truth workspace for:
+This repo is the working source of truth for:
 
-- Make-ready component wrappers
-- Figma Make component metadata
-- design-system parity tracking
-- token usage rules
-- QA checklists for keeping the Make Kit aligned with the Figma design system
+- curated component source under `src/SvsUiNova`
+- Figma Make metadata and readiness tracking
+- design guidelines, UX review frameworks, and authoring rules
+- design token structure and theme organization
+- alignment between Figma libraries, Make Kit source, and code
 
-## Current State
+## Current Structure
 
-The repository has been initialized with a manifest and integration checklist. The next step is to add or export the actual Figma Make source files into this repo.
-
-## Next Step
-
-Copy the exported Make source into this repository using the target structure
-described in `docs/FIGMA_MAKE_SOURCE_IMPORT.md`.
-
-Recommended landing zones:
+Core landing zones:
 
 - `src/SvsUiNova/components/` for curated components and `.figma.tsx`
-- `src/imports/_generated/` for raw generated exports
-- `src/styles/` for shared style and token files
-- `src/app/` for demo surfaces such as `App.tsx` and `AllComponentsDemo.tsx`
-- `guidelines/` for usage and authoring guidance
+- `src/SvsUiNova/manifest.ts` for Make Kit coverage and readiness
+- `src/design-tokens/` for the canonical token folder structure
+- `src/imports/` for raw or generated migration inputs from Figma
+- `src/styles/` for shared app-level styling entrypoints
+- `src/app/` for demo and verification surfaces
+- `guidelines/` for design, UX, and writing guidance
+- `docs/` for audits, calibration notes, and import/sync procedures
+
+## Design Token Model
+
+The repository uses a four-part token model:
+
+1. `globals/` for shared global colors
+2. `primitives/` for product-oriented primitive color families
+3. `themes/` for parent theme collections such as `svenska-spel`
+4. `products/` for per-product theme overrides and theme-mode variants
+
+For detailed structure guidance, see [src/design-tokens/README.md](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/src/design-tokens/README.md).
+
+## Working Rules
+
+- Keep curated component source separate from raw Figma exports.
+- Treat `src/design-tokens/` as the canonical checked-in token structure.
+- Treat `src/imports/` as migration input, not the final design-token API.
+- Update `src/SvsUiNova/manifest.ts` and `src/SvsUiNova/component-manifest.json` when public Make Kit support changes.
+- Keep guidelines versioned with the same repo so design and code use the same quality rules.
 
 ## Key Files
 
-- `src/SvsUiNova/manifest.ts` tracks component coverage and readiness.
-- `src/SvsUiNova/MAKE_KIT_INTEGRATION.md` describes the quality gate.
-- `docs/FIGMA_MAKE_KIT_AUDIT.md` captures the first audit findings.
-- `docs/CALIBRATION_PLAN.md` turns the audit into an execution plan.
-- `docs/CODEX_SKILL_DRAFT.md` is a draft Codex skill for future repeatable work.
-
-## Recommended Flow
-
-1. Add the Make Kit source files to this repository.
-2. Keep curated components under `src/SvsUiNova/components`.
-3. Keep generated Figma exports quarantined under `src/imports/_generated`.
-4. Update `src/SvsUiNova/manifest.ts` whenever component support changes.
-5. Make every `ready` component render in `AllComponentsDemo`.
+- [src/SvsUiNova/manifest.ts](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/src/SvsUiNova/manifest.ts)
+- [src/SvsUiNova/MAKE_KIT_INTEGRATION.md](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/src/SvsUiNova/MAKE_KIT_INTEGRATION.md)
+- [src/design-tokens/README.md](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/src/design-tokens/README.md)
+- [docs/FIGMA_MAKE_SOURCE_IMPORT.md](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/docs/FIGMA_MAKE_SOURCE_IMPORT.md)
+- [docs/FIGMA_MAKE_KIT_AUDIT.md](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/docs/FIGMA_MAKE_KIT_AUDIT.md)
+- [guidelines/Guidelines.md](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/guidelines/Guidelines.md)

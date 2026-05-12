@@ -12,8 +12,8 @@ Source exports reviewed:
   Soc, Stryktipset, Topptipset, Triss, Tur, Vikinglotto, VM-Tipset,
   and Wireframe.
 
-Source archive location:
-- [`docs/figma-variable-exports/README.md`](./figma-variable-exports/README.md)
+Normalized token structure:
+- [`src/design-tokens/README.md`](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/src/design-tokens/README.md)
 
 ## Executive Summary
 
@@ -254,7 +254,7 @@ The highest-value cleanup items are:
 ## Recommended Next Step
 
 Use the normalization checklist in
-[`docs/figma-variable-exports/README.md`](./figma-variable-exports/README.md)
+[`src/design-tokens/README.md`](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/src/design-tokens/README.md)
 to classify semantic-layer cleanup findings into three categories:
 - `confirmed intentional`
 - `needs semantic rename`

@@ -6,8 +6,8 @@ translated into semantic UI usage.
 
 For practical usage guidance, see [ColorSystem.md](./ColorSystem.md).
 
-For the reviewed source export inventory, see
-[Figma Variable Exports](../../docs/figma-variable-exports/README.md).
+For the normalized token structure used in this repo, see
+[Design Tokens](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/src/design-tokens/README.md).
 
 ---
 
