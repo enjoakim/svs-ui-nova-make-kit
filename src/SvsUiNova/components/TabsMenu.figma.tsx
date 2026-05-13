@@ -4,12 +4,12 @@ import { TabsMenu } from './TabsMenu'
 /**
  * Code Connect mapping for Svenska Spel TabsMenu component
  *
- * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=8650-224
+ * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=4840:22295
  */
 
 figma.connect(
   TabsMenu,
-  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=8650-224&m=dev',
+  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=4840:22295&m=dev',
   {
     props: {
       items: figma.children('Tab Items'),

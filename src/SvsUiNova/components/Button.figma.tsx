@@ -3,12 +3,12 @@ import { Button } from './Button'
 
 /**
  * Code Connect mapping for Svenska Spel Button component
- * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=2718-8237
+ * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=24705:4022
  */
 
 figma.connect(
   Button,
-  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=2718-8237&m=dev',
+  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=24705:4022&m=dev',
   {
     props: {
       variant: figma.enum('Variant', {

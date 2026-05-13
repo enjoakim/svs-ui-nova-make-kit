@@ -4,12 +4,12 @@ import { Badge } from './Badge'
 /**
  * Code Connect mapping for Svenska Spel Badge component
  *
- * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=136-1178
+ * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=4840:22399
  */
 
 figma.connect(
   Badge,
-  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=136-1178&m=dev',
+  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=4840:22399&m=dev',
   {
     props: {
       variant: figma.enum('variant', {

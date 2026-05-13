@@ -3,12 +3,12 @@ import { Select } from './Select'
 
 /**
  * Code Connect mapping for Svenska Spel Select component
- * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=2738-3406
+ * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=2764:26178
  */
 
 figma.connect(
   Select,
-  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=2738-3406&m=dev',
+  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=2764:26178&m=dev',
   {
     props: {
       variant: figma.enum('Variant', {

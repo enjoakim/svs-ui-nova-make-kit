@@ -4,12 +4,12 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '.
 /**
  * Code Connect mapping for Svenska Spel Table component
  *
- * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=13824-30670
+ * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=4840:22553
  */
 
 figma.connect(
   Table,
-  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=13824-30670&m=dev',
+  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=4840:22553&m=dev',
   {
     props: {
       variant: figma.enum('Variant', {

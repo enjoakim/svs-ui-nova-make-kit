@@ -5,12 +5,12 @@ import { Checkbox } from './Checkbox'
  * Code Connect mapping for Svenska Spel Checkbox component
  *
  * TODO: Update with actual Figma component node-id
- * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=4840-22269
+ * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=2887:5157
  */
 
 figma.connect(
   Checkbox,
-  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=4840-22269&m=dev',
+  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=2887:5157&m=dev',
   {
     props: {
       checked: figma.boolean('Checked'),

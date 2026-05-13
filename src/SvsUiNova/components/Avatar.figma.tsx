@@ -5,12 +5,12 @@ import { Avatar } from './Avatar'
  * Code Connect mapping for Svenska Spel Avatar component
  *
  * TODO: Update with actual Figma component node-id
- * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=4840-22273
+ * Connected to: https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=6745:28518
  */
 
 figma.connect(
   Avatar,
-  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=4840-22273&m=dev',
+  'https://www.figma.com/design/OQpwpaJZzLCQG8JkGAnbeJ/SvS-UI--nova-?node-id=6745:28518&m=dev',
   {
     props: {
       size: figma.enum('Size', {
