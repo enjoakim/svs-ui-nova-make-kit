@@ -8,6 +8,11 @@
     "figma:connect": "figma connect",
     "figma:publish": "figma connect publish",
     "figma:unpublish": "figma connect unpublish",
+    "figma:auto-connect": "node scripts/auto-code-connect.js",
+    "figma:auto-publish": "npm run figma:auto-connect && npm run figma:publish",
+    "figma:mock": "node scripts/mock-code-connect.js",
+    "figma:commit": "bash scripts/git-commit-code-connect.sh",
+    "validate:manifest": "node scripts/validate-manifest.js",
     "dev": "vite"
   },
   "dependencies": {

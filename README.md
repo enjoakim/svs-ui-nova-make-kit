@@ -57,3 +57,51 @@ For detailed structure guidance, see [src/design-tokens/README.md](/Users/joakim
 - [docs/FIGMA_MAKE_SOURCE_IMPORT.md](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/docs/FIGMA_MAKE_SOURCE_IMPORT.md)
 - [docs/FIGMA_MAKE_KIT_AUDIT.md](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/docs/FIGMA_MAKE_KIT_AUDIT.md)
 - [guidelines/Guidelines.md](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/guidelines/Guidelines.md)
+
+## Code Connect Automation
+
+This repository includes an automated Code Connect system that keeps Figma designs in sync with React components.
+
+### Quick Start
+
+```bash
+# 1. Set your Figma token (get from figma.com/api/tokens)
+echo "FIGMA_TOKEN=your_token_here" > .env
+
+# 2. Run automation
+npm run figma:auto-connect
+
+# 3. Commit and push
+./QUICK_COMMIT.sh
+git push origin main
+```
+
+### Available Commands
+
+```bash
+npm run figma:mock              # Test without making changes
+npm run figma:auto-connect      # Auto-update Code Connect files from Figma
+npm run figma:auto-publish      # Auto-connect and publish to Figma
+npm run figma:commit            # Interactive git commit helper
+npm run figma:connect           # Manual Code Connect (original Figma CLI)
+npm run figma:publish           # Manual publish to Figma
+```
+
+### Documentation
+
+- **[RUN_ME.md](RUN_ME.md)** — Ultra-quick start (60 seconds)
+- **[QUICK_START_CODE_CONNECT.md](QUICK_START_CODE_CONNECT.md)** — 5-minute setup
+- **[HOW_TO_RUN_CODE_CONNECT.md](HOW_TO_RUN_CODE_CONNECT.md)** — Complete guide
+- **[CODE_CONNECT_SUMMARY.md](CODE_CONNECT_SUMMARY.md)** — System overview
+- **[AUTO_CODE_CONNECT.md](AUTO_CODE_CONNECT.md)** — Technical deep-dive
+- **[COMMIT_INSTRUCTIONS.md](COMMIT_INSTRUCTIONS.md)** — Git workflow guide
+- **[.github/SETUP_GITHUB_ACTIONS.md](.github/SETUP_GITHUB_ACTIONS.md)** — Weekly automation setup
+
+### GitHub Actions
+
+Automated weekly runs (configurable):
+- Runs every Monday at 9 AM UTC
+- Can be triggered manually anytime
+- Requires `FIGMA_TOKEN` secret in GitHub
+
+See [.github/SETUP_GITHUB_ACTIONS.md](.github/SETUP_GITHUB_ACTIONS.md) for setup instructions.
