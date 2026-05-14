@@ -2,6 +2,9 @@
 
 This folder holds product-specific theme overrides and mode files.
 
+It also includes `index.json`, which acts as the machine-readable product map
+for this layer.
+
 Each product folder should follow the same mode structure:
 
 - `light.tokens.json`

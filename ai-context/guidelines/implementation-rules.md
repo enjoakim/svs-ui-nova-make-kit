@@ -76,3 +76,7 @@ The repo currently has some implementation drift:
 When generating new code, do not copy drift forward. Follow the public API and
 the guidance in this folder unless you are intentionally refactoring the
 underlying component.
+
+When you need extra layout or hierarchy calibration beyond the repo's current
+documentation, use `guidelines/DesignParserReference.md` before introducing new
+ad hoc rules.

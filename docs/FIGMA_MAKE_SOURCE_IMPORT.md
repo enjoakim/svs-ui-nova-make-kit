@@ -63,6 +63,14 @@ Then check token placement:
 - `src/design-tokens/primitives` for split primitive token payloads
 - `src/design-tokens/themes/svenska-spel` for parent semantic themes
 - `src/design-tokens/products/<product>` for per-product modes
+- `src/design-tokens/index.json` for the checked-in source index
+
+Then check token bridges:
+
+- `src/styles/theme.css` should remain a semantic runtime bridge sourced from
+  `src/design-tokens/themes/svenska-spel`
+- `src/SvsUiNova/styles.css` should remain a low-level component bridge sourced
+  from the checked-in token system rather than ad hoc values
 
 If the import changes token structure, update:
 

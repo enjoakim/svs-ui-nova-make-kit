@@ -6,6 +6,9 @@ SvS UI Nova Make Kit.
 Core entry points:
 
 - [Guidelines.md](./Guidelines.md) - main design-system documentation index
+- [DesignParserReference.md](./DesignParserReference.md) - how to use
+  `designparser.de` as an external calibration source without breaking repo
+  conventions
 - [USABILITY_HEURISTICS.md](./USABILITY_HEURISTICS.md) - Nielsen Norman Group's
   10 usability heuristics for AI-assisted UI review
 - [UX_UI_INDUSTRY_STANDARDS.md](./UX_UI_INDUSTRY_STANDARDS.md) - broader UX/UI
@@ -27,6 +30,8 @@ This folder can also hold Make Kit guidance content such as:
 - authoring rules
 - migration notes
 - quality criteria for DS parity
+- curated external references that help AI tools refine UI output while still
+  following SvS UI Nova
 
 If the original Make source already contains guideline files, copy them here
 without renaming unless there is a collision.

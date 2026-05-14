@@ -16,3 +16,6 @@ themes/
 `svenska-spel` acts as the parent semantic theme. Product folders under
 `src/design-tokens/products/` should extend that structure rather than invent a
 new semantic shape.
+
+These four checked-in mode files should remain the semantic baseline for
+product-level theme mapping.

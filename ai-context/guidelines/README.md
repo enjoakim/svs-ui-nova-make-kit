@@ -38,3 +38,6 @@ These guidance files are derived from:
 - `src/app/ComponentDemo.tsx`
 - `guidelines/foundation/*`
 - `guidelines/components/*`
+
+External calibration references may also be used when the repo is silent or
+incomplete. For this repo, see `guidelines/DesignParserReference.md`.

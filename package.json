@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "npm run validate:tokens && vite build",
     "fonts:convert": "node src/SvsUiNova/scripts/convert-fonts-to-data-uri.js",
     "figma:connect": "figma connect",
     "figma:publish": "figma connect publish",
@@ -13,6 +13,7 @@
     "figma:mock": "node scripts/mock-code-connect.js",
     "figma:commit": "bash scripts/git-commit-code-connect.sh",
     "validate:manifest": "node scripts/validate-manifest.js",
+    "validate:tokens": "node scripts/validate-token-sources.js",
     "dev": "vite"
   },
   "dependencies": {
@@ -103,6 +104,8 @@
       "import": "./dist/index.js"
     },
     "./style.css": "./dist/style.css",
+    "./design-tokens/*": "./src/design-tokens/*",
+    "./ai-context/*": "./ai-context/*",
     "./dist/*": {
       "types": "./dist/*",
       "import": "./dist/*"
@@ -111,6 +114,8 @@
   },
   "files": [
     "dist",
+    "src/design-tokens/**/*.json",
+    "ai-context/**/*",
     "**/*.md"
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SvS UI Nova Design Token Source Index",
+  "description": "Canonical checked-in design token index for SvS UI Nova.",
+  "version": "1.0.0",
+  "source_of_truth": "src/design-tokens/",
+  "layers": {
+    "globals": {
+      "path": "globals/colors.json",
+      "role": "Shared global color source"
+    },
+    "primitives": {
+      "index": "primitives/index.json",
+      "metadata": "primitives/_metadata.json",
+      "root": "primitives/colors/products/",
+      "role": "Primitive color splits per product or product group"
+    },
+    "themes": {
+      "root": "themes/svenska-spel/",
+      "modes": [
+        "light",
+        "light-secondary",
+        "dark",
+        "vibrant"
+      ],
+      "role": "Parent semantic theme collection"
+    },
+    "products": {
+      "index": "products/index.json",
+      "root": "products/",
+      "modes": [
+        "light",
+        "light-secondary",
+        "dark",
+        "vibrant"
+      ],
+      "role": "Product-specific semantic theme extensions"
+    }
+  },
+  "bridges": {
+    "semantic_css": "../styles/theme.css",
+    "component_css": "../SvsUiNova/styles.css",
+    "generated_imports": "../imports/_generated/"
+  },
+  "runtime_defaults": {
+    "theme_family": "svenska-spel",
+    "light_mode": "light",
+    "dark_mode": "dark"
+  }
+}

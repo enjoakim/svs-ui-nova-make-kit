@@ -27,6 +27,19 @@ In repo terms, that means:
 - `src/design-tokens/products/<product>/`: product-specific theme modes
 - `src/imports/`: raw migration input from Figma, not the preferred long-term API
 
+## Bridge Files
+
+The checked-in token JSON files are the source of truth. The CSS files below
+are bridge layers derived from that source:
+
+- `src/styles/theme.css`: semantic runtime bridge used by app theming and
+  Tailwind-style utilities
+- `src/SvsUiNova/styles.css`: low-level component token bridge and typography
+  utility layer
+
+Do not treat either CSS file as the canonical authoring source when the token
+value already exists under `src/design-tokens/`.
+
 ## Naming Rules
 
 - Use lowercase kebab-case for token folders and exported token files.
@@ -61,3 +74,4 @@ In repo terms, that means:
 - [Color System](./foundation/ColorSystem.md)
 - [Color Token Architecture](./foundation/ColorTokenArchitecture.md)
 - [src/design-tokens/README.md](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/src/design-tokens/README.md)
+- [src/design-tokens/index.json](/Users/joakim/Documents/GitHub/svs-ui-nova-make-kit/src/design-tokens/index.json)

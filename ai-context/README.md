@@ -38,6 +38,11 @@ UI code:
 Use `examples/` for future worked examples and `manifests/` for future
 machine-readable summaries.
 
+For broader UI calibration, this folder can be used together with
+`guidelines/DesignParserReference.md`, which explains how to translate external
+rule libraries such as `designparser.de` into repo-native implementation
+without creating a parallel system.
+
 ## Repo Intent
 
 This repo is not only a Make Kit wrapper. It is also the bridge between:

@@ -1,3 +1,14 @@
+/*
+ * Semantic runtime bridge.
+ *
+ * Source of truth:
+ * - src/design-tokens/themes/svenska-spel/light.tokens.json
+ * - src/design-tokens/themes/svenska-spel/dark.tokens.json
+ *
+ * Keep semantic names stable here for app/runtime theming. Update the checked-in
+ * token JSON source first, then sync this bridge.
+ */
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -80,7 +91,7 @@
   /* The accent color used for highlights, links, and other interactive elements. */
   --accent: rgba(255, 213, 206, 1.00);
   /* The default color for text or elements that appear on top of accent colored elements. */
-  --accent-foreground: rgba(27, 25, 24, 1.00);
+  --accent-foreground: rgba(134, 16, 44, 1.00);
   /* The color used for background in destructive actions, such as delete buttons or error messages. */
   --destructive: rgba(197, 40, 27, 1.00);
   /* The default color for text or elements that appear on top of destructive colored elements. */
@@ -128,39 +139,39 @@
   /* The default border color for elements in sidebars and navigation menus. */
   --sidebar-border: rgba(40, 3, 1, 0.16);
   /* The default color for focus rings, outlines, and other focus indicators in sidebars and navigation menus. */
-  --sidebar-ring: rgba(0, 0, 0, 1.00);
+  --sidebar-ring: rgba(27, 25, 24, 1.00);
 }
 
 .dark {
-  --background: rgba(27, 25, 24, 1.00);
-  --foreground: rgba(250, 246, 243, 1.00);
-  --card: rgba(40, 38, 37, 1.00);
-  --card-foreground: rgba(250, 246, 243, 1.00);
-  --popover: rgba(40, 38, 37, 1.00);
-  --popover-foreground: rgba(250, 246, 243, 1.00);
-  --primary: rgba(237, 0, 0, 1.00);
-  --primary-foreground: rgba(255, 255, 255, 1.00);
-  --secondary: rgba(98, 0, 29, 1.00);
-  --secondary-foreground: rgba(255, 255, 255, 1.00);
-  --muted: rgba(40, 38, 37, 1.00);
-  --muted-foreground: rgba(255, 255, 255, 0.70);
+  --background: rgba(17, 15, 14, 1.00);
+  --foreground: rgba(255, 255, 255, 1.00);
+  --card: rgba(27, 25, 24, 1.00);
+  --card-foreground: rgba(255, 255, 255, 1.00);
+  --popover: rgba(43, 40, 38, 1.00);
+  --popover-foreground: rgba(255, 255, 255, 1.00);
+  --primary: rgba(255, 75, 56, 1.00);
+  --primary-foreground: rgba(0, 0, 0, 1.00);
+  --secondary: rgba(255, 75, 56, 1.00);
+  --secondary-foreground: rgba(98, 0, 29, 1.00);
+  --muted: rgba(122, 126, 133, 0.24);
+  --muted-foreground: rgba(255, 255, 255, 0.72);
   --accent: rgba(98, 0, 29, 1.00);
-  --accent-foreground: rgba(255, 255, 255, 1.00);
-  --destructive: rgba(197, 40, 27, 1.00);
+  --accent-foreground: rgba(255, 171, 158, 1.00);
+  --destructive: rgba(219, 48, 33, 1.00);
   --destructive-foreground: rgba(255, 255, 255, 1.00);
-  --border: rgba(255, 255, 255, 0.16);
-  --input: rgba(40, 38, 37, 1.00);
-  --input-background: rgba(40, 38, 37, 1.00);
-  --ring: rgba(250, 246, 243, 1.00);
+  --border: rgba(122, 126, 133, 0.32);
+  --input: rgba(27, 25, 24, 1.00);
+  --input-background: rgba(27, 25, 24, 1.00);
+  --ring: rgba(234, 229, 225, 1.00);
   --elevation-sm: 0px 0px 0px 2px rgba(40, 38, 37, 1.00), 0px 0px 0px 4px rgba(250, 246, 243, 1.00);
-  --sidebar: rgba(40, 38, 37, 1.00);
-  --sidebar-foreground: rgba(250, 246, 243, 1.00);
-  --sidebar-primary: rgba(237, 0, 0, 1.00);
-  --sidebar-primary-foreground: rgba(255, 255, 255, 1.00);
-  --sidebar-accent: rgba(60, 58, 57, 1.00);
-  --sidebar-accent-foreground: rgba(250, 246, 243, 1.00);
-  --sidebar-border: rgba(255, 255, 255, 0.16);
-  --sidebar-ring: rgba(255, 255, 255, 1.00);
+  --sidebar: rgba(27, 25, 24, 1.00);
+  --sidebar-foreground: rgba(255, 255, 255, 1.00);
+  --sidebar-primary: rgba(255, 75, 56, 1.00);
+  --sidebar-primary-foreground: rgba(0, 0, 0, 1.00);
+  --sidebar-accent: rgba(49, 45, 43, 1.00);
+  --sidebar-accent-foreground: rgba(255, 255, 255, 1.00);
+  --sidebar-border: rgba(122, 126, 133, 0.32);
+  --sidebar-ring: rgba(234, 229, 225, 1.00);
 }
 
 @theme inline {

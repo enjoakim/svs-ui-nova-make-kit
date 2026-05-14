@@ -1,3 +1,16 @@
+/*
+ * Low-level component token bridge and utility layer.
+ *
+ * Source of truth:
+ * - src/design-tokens/index.json
+ * - src/design-tokens/themes/svenska-spel/*
+ * - src/design-tokens/primitives/*
+ * - src/design-tokens/globals/colors.json
+ *
+ * Keep this file aligned with the checked-in token source instead of treating
+ * the CSS declarations below as the canonical authoring layer.
+ */
+
 :root {
   --border-radius\/rounded-none: 0;
   --border-radius\/rounded-sm: 2;
@@ -1009,4 +1022,3 @@
   font-weight: 400;
   letter-spacing: 0px;
 }
-

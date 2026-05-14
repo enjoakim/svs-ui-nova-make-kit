@@ -1,0 +1,114 @@
+{
+  "description": "Split primitive colour tokens by product/group from primitive-colors.json. Place the primitives folder inside design-tokens.",
+  "structure": "primitives/colors/products/{product}.json",
+  "products": [
+    {
+      "name": "Wireframe",
+      "file": "colors/products/wireframe.json"
+    },
+    {
+      "name": "Svs",
+      "file": "colors/products/svs.json"
+    },
+    {
+      "name": "Soc",
+      "file": "colors/products/soc.json"
+    },
+    {
+      "name": "Bingo",
+      "file": "colors/products/bingo.json"
+    },
+    {
+      "name": "Casino",
+      "file": "colors/products/casino.json"
+    },
+    {
+      "name": "Europatipset",
+      "file": "colors/products/europatipset.json"
+    },
+    {
+      "name": "Extratipset",
+      "file": "colors/products/extratipset.json"
+    },
+    {
+      "name": "Maltipset",
+      "file": "colors/products/maltipset.json"
+    },
+    {
+      "name": "Momang",
+      "file": "colors/products/momang.json"
+    },
+    {
+      "name": "Oddset",
+      "file": "colors/products/oddset.json"
+    },
+    {
+      "name": "Poker",
+      "file": "colors/products/poker.json"
+    },
+    {
+      "name": "Stryktipset",
+      "file": "colors/products/stryktipset.json"
+    },
+    {
+      "name": "Topptipset",
+      "file": "colors/products/topptipset.json"
+    },
+    {
+      "name": "VM-Tipset",
+      "file": "colors/products/vm-tipset.json"
+    },
+    {
+      "name": "Tur",
+      "file": "colors/products/tur.json"
+    },
+    {
+      "name": "Eurojackpot",
+      "file": "colors/products/eurojackpot.json"
+    },
+    {
+      "name": "Fler-lotter",
+      "file": "colors/products/fler-lotter.json"
+    },
+    {
+      "name": "Joker",
+      "file": "colors/products/joker.json"
+    },
+    {
+      "name": "Keno",
+      "file": "colors/products/keno.json"
+    },
+    {
+      "name": "KenoXpress",
+      "file": "colors/products/kenoxpress.json"
+    },
+    {
+      "name": "Lotto",
+      "file": "colors/products/lotto.json"
+    },
+    {
+      "name": "Lyckoplatsen",
+      "file": "colors/products/lyckoplatsen.json"
+    },
+    {
+      "name": "Lordagsgodis",
+      "file": "colors/products/lordagsgodis.json"
+    },
+    {
+      "name": "Rubbet",
+      "file": "colors/products/rubbet.json"
+    },
+    {
+      "name": "Skrapspel",
+      "file": "colors/products/skrapspel.json"
+    },
+    {
+      "name": "Triss",
+      "file": "colors/products/triss.json"
+    },
+    {
+      "name": "Vikinglotto",
+      "file": "colors/products/vikinglotto.json"
+    }
+  ]
+}

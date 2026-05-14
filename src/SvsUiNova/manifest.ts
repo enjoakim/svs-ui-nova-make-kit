@@ -24,8 +24,15 @@ export interface MakeKitManifest {
   figmaLibraryUrl: string;
   makeKitUrl: string;
   tokenSources: {
-    canonicalCss?: string;
-    themeCss?: string;
+    canonicalRoot?: string;
+    designTokensIndex?: string;
+    globals?: string;
+    primitivesIndex?: string;
+    productPrimitivesRoot?: string;
+    parentThemeRoot?: string;
+    productThemeRoot?: string;
+    semanticCssBridge?: string;
+    componentCssBridge?: string;
     generatedImports?: string;
   };
   generatedImportsPolicy: string;
@@ -40,8 +47,15 @@ export const svsUiNovaManifest: MakeKitManifest = {
   makeKitUrl:
     "https://www.figma.com/make/rCQbYmSkHVcvlC97il4nwB/SvS-UI--nova-",
   tokenSources: {
-    canonicalCss: "src/SvsUiNova/styles.css",
-    themeCss: "src/styles/theme.css",
+    canonicalRoot: "src/design-tokens",
+    designTokensIndex: "src/design-tokens/index.json",
+    globals: "src/design-tokens/globals/colors.json",
+    primitivesIndex: "src/design-tokens/primitives/index.json",
+    productPrimitivesRoot: "src/design-tokens/primitives/colors/products",
+    parentThemeRoot: "src/design-tokens/themes/svenska-spel",
+    productThemeRoot: "src/design-tokens/products",
+    semanticCssBridge: "src/styles/theme.css",
+    componentCssBridge: "src/SvsUiNova/styles.css",
     generatedImports: "src/imports/_generated/Mode_1.tokens.json",
   },
   generatedImportsPolicy:

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Svenska Spel Product Theme Index",
+  "description": "Index of checked-in product theme token directories.",
+  "version": "1.1.0",
+  "modes": [
+    "light",
+    "light-secondary",
+    "dark",
+    "vibrant"
+  ],
+  "products": {
+    "sport_casino": [
+      "bingo",
+      "casino",
+      "poker",
+      "oddset",
+      "stryktipset",
+      "topptipset",
+      "maltipset",
+      "europatipset",
+      "extratipset",
+      "momang",
+      "vm-tipset"
+    ],
+    "tur_lotterier": [
+      "lotto",
+      "triss",
+      "eurojackpot",
+      "vikinglotto",
+      "keno",
+      "kenoxpress",
+      "joker",
+      "fler-lotter",
+      "skrapspel",
+      "lordagsgodis",
+      "lyckoplatsen",
+      "rubbet"
+    ],
+    "system": [
+      "soc",
+      "tur",
+      "wireframe"
+    ]
+  },
+  "total_count": 26,
+  "location": "src/design-tokens/products/",
+  "usage": "Each product directory contains checked-in token files for all supported modes.",
+  "format": "Each product directory contains light.tokens.json, light-secondary.tokens.json, dark.tokens.json, and vibrant.tokens.json."
+}
